@@ -26,7 +26,6 @@ struct ViewControllerProvider: PreviewProvider {
     
     struct ContainerView: UIViewControllerRepresentable {
         
-        
         let viewController = ViewController()
         
         func makeUIViewController(context: Context) -> ViewController {
@@ -36,6 +35,5 @@ struct ViewControllerProvider: PreviewProvider {
         func updateUIViewController(_ uiViewController: ViewController, context: Context) {
             
         }
-        
     }
 }
