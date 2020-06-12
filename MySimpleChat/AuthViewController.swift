@@ -9,7 +9,7 @@
 import UIKit
 import SwiftUI
 
-class ViewController: UIViewController {
+class AuthViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     }
 }
 
-struct ViewControllerProvider: PreviewProvider {
+struct AuthViewControllerProvider: PreviewProvider {
     
     static var previews: some View {
         ContainerView().edgesIgnoringSafeArea(.all)
@@ -26,13 +26,13 @@ struct ViewControllerProvider: PreviewProvider {
     
     struct ContainerView: UIViewControllerRepresentable {
         
-        let viewController = ViewController()
+        let viewController = AuthViewController()
         
-        func makeUIViewController(context: Context) -> ViewController {
+        func makeUIViewController(context: Context) -> AuthViewController {
             return viewController
         }
         
-        func updateUIViewController(_ uiViewController: ViewController, context: Context) {
+        func updateUIViewController(_ uiViewController: AuthViewController, context: Context) {
             
         }
     }
