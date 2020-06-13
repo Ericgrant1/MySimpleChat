@@ -45,6 +45,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		529B2D002494D97E00C0CD94 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				529B2CFE2493BECF00C0CD94 /* UIImageExt.swift */,
+				529B2CFC2493BCDE00C0CD94 /* UILabelExt.swift */,
+				5218FC492493B84500E20955 /* UIColorExt.swift */,
+				5218FC472493B5E500E20955 /* UIFontExt.swift */,
+				52D6CBFC2493AFE700C89474 /* UIButtonExt.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		529B2D012494D99000C0CD94 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				529B2D002494D97E00C0CD94 /* UIKit */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		52D6CBCE24933FDC00C89474 = {
 			isa = PBXGroup;
 			children = (
@@ -67,11 +87,7 @@
 				52D6CBDA24933FDC00C89474 /* AppDelegate.swift */,
 				52D6CBDC24933FDC00C89474 /* SceneDelegate.swift */,
 				52D6CBDE24933FDC00C89474 /* AuthViewController.swift */,
-				529B2CFE2493BECF00C0CD94 /* UIImageExt.swift */,
-				529B2CFC2493BCDE00C0CD94 /* UILabelExt.swift */,
-				5218FC492493B84500E20955 /* UIColorExt.swift */,
-				5218FC472493B5E500E20955 /* UIFontExt.swift */,
-				52D6CBFC2493AFE700C89474 /* UIButtonExt.swift */,
+				529B2D012494D99000C0CD94 /* Extensions */,
 				52D6CBE324933FDD00C89474 /* Assets.xcassets */,
 				52D6CBE524933FDD00C89474 /* LaunchScreen.storyboard */,
 				52D6CBE824933FDD00C89474 /* Info.plist */,
