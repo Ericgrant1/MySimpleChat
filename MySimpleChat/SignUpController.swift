@@ -26,15 +26,20 @@ class SignUpController: UIViewController {
     let confirmPasswordTextField = TextFieldFormView(font: .avenir20())
     
     let signUpButton = UIButton(title: "Sign Up", titleColor: .white, backgroundColor: .buttonDark(), cornerRadius: 4)
-    let loginButton = UIButton()
+    
+    let loginButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Login", for: .normal)
+        button.setTitleColor(.buttonRed(), for: .normal)
+        button.titleLabel?.font = .avenir20()
+        return button
+        }()
     
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loginButton.setTitle("Login", for: .normal)
-        loginButton.setTitleColor(.buttonRed(), for: .normal)
         
         view.backgroundColor = #colorLiteral(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)
         
