@@ -15,9 +15,9 @@ class AuthViewController: UIViewController {
     
     let logoImageView = UIImageView(image: #imageLiteral(resourceName: "mychatLogo"), contentMode: .scaleAspectFit)
     
-    let googleLabel = UILabel(text: "Get started with")
-    let emailLabel = UILabel(text: "Or sign up with")
-    let alreadyOnboardLabel = UILabel(text: "Already onboard?")
+    let googleLabel = UILabel(text: "Get started with", textColor: .white)
+    let emailLabel = UILabel(text: "Or Sign up with", textColor: .white)
+    let alreadyOnboardLabel = UILabel(text: "Don't have an account?", textColor: .white)
     
     let googleButton = UIButton(title: "Google",
                                 titleColor: .black,
@@ -39,7 +39,7 @@ class AuthViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+        view.backgroundColor = #colorLiteral(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)
         
         setupConstraints()
     }

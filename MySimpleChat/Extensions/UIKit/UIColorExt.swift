@@ -20,6 +20,6 @@ extension UIColor {
     }
     
     static func buttonDark() -> UIColor {
-        return #colorLiteral(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)
+        return #colorLiteral(red: 0, green: 0.4980392157, blue: 1, alpha: 1)
     }
 }
