@@ -17,7 +17,7 @@ class AuthViewController: UIViewController {
     
     let googleLabel = UILabel(text: "Get started with", textColor: .white)
     let emailLabel = UILabel(text: "Or Sign up with", textColor: .white)
-    let alreadyOnboardLabel = UILabel(text: "Don't have an account?", textColor: .white)
+    let alreadyHaveAccountLabel = UILabel(text: "Already have an account?", textColor: .white)
     
     let googleButton = UIButton(title: "Google",
                                 titleColor: .black,
@@ -56,7 +56,7 @@ extension AuthViewController {
         
         let googleView = ButtonFormView(label: googleLabel, button: googleButton)
         let emailView = ButtonFormView(label: emailLabel, button: emailButton)
-        let loginView = ButtonFormView(label: alreadyOnboardLabel, button: loginButton)
+        let loginView = ButtonFormView(label: alreadyHaveAccountLabel, button: loginButton)
         let stackView = UIStackView(arrangedSubviews: [googleView, emailView, loginView], axis: .vertical, spacing: 40)
         
         view.addSubview(stackView)
