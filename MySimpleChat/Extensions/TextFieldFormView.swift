@@ -19,10 +19,10 @@ class TextFieldFormView: UITextField {
         self.translatesAutoresizingMaskIntoConstraints = false
         
         var bottomView = UIView()
-        bottomView.translatesAutoresizingMaskIntoConstraints = false
         bottomView = UIView.init(frame: CGRect.init(x: 0, y: 0,
                                                     width: 0, height: 0))
         bottomView.backgroundColor = .textFieldLight()
+        bottomView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(bottomView)
         
         NSLayoutConstraint.activate([

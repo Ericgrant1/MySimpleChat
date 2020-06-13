@@ -41,7 +41,7 @@ class AuthViewController: UIViewController {
         
         view.backgroundColor = #colorLiteral(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)
         
-        setupConstraints()
+        configureUI()
     }
     
     // MARK: - Hepler functions
@@ -52,7 +52,7 @@ class AuthViewController: UIViewController {
 
 extension AuthViewController {
     
-    private func setupConstraints() {
+    private func configureUI() {
         
         let googleView = ButtonFormView(label: googleLabel, button: googleButton)
         let emailView = ButtonFormView(label: emailLabel, button: emailButton)
