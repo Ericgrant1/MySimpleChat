@@ -39,7 +39,7 @@ class AuthViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .darkGray
+        view.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         
         setupConstraints()
     }
@@ -53,6 +53,9 @@ class AuthViewController: UIViewController {
         logoImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 160).isActive = true
         logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
+        let googleView = ButtonFormView(label: googleLabel, button: googleButton)
+        let emailView = ButtonFormView(label: emailLabel, button: emailButton)
+        let loginView = ButtonFormView(label: alreadyOnboardLabel, button: loginButton)
     }
 }
 
