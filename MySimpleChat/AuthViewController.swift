@@ -39,7 +39,20 @@ class AuthViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .blue
+        view.backgroundColor = .darkGray
+        
+        setupConstraints()
+    }
+    
+    // MARK: - Hepler functions
+    
+    private func setupConstraints() {
+        
+        view.addSubview(logoImageView)
+        logoImageView.translatesAutoresizingMaskIntoConstraints = false
+        logoImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 160).isActive = true
+        logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
     }
 }
 
