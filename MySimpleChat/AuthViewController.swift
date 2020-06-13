@@ -46,6 +46,12 @@ class AuthViewController: UIViewController {
     
     // MARK: - Hepler functions
     
+}
+
+// MARK: - Setup constraints
+
+extension AuthViewController {
+    
     private func setupConstraints() {
         
         let googleView = ButtonFormView(label: googleLabel, button: googleButton)
@@ -55,7 +61,7 @@ class AuthViewController: UIViewController {
         
         view.addSubview(stackView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
-
+        
         view.addSubview(logoImageView)
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
         
