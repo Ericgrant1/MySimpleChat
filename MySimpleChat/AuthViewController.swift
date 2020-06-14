@@ -25,8 +25,8 @@ class AuthViewController: UIViewController {
                                 isShadow: true)
 
     let emailButton = UIButton(title: "Email",
-                            titleColor: .white,
-                            backgroundColor: .buttonDark())
+                               titleColor: .white,
+                               backgroundColor: .buttonDark())
     
     let loginButton = UIButton(title: "Login",
                                titleColor: .buttonRed(),
