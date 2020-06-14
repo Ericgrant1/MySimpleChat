@@ -14,12 +14,29 @@ class ProfileController: UIViewController {
     
     // MARK: - Properties
     
+    let populateImageView = ProfilePhotoView()
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .systemPink
+        view.backgroundColor = #colorLiteral(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)
+        configureUI()
+    }
+}
+
+extension ProfileController {
+    
+    private func configureUI() {
+        
+        populateImageView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(populateImageView)
+        
+        NSLayoutConstraint.activate([
+            populateImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 160),
+            populateImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
     }
 }
 
