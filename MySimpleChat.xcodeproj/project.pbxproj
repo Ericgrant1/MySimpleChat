@@ -17,6 +17,7 @@
 		529B2D09249548D100C0CD94 /* TextFieldFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529B2D08249548D100C0CD94 /* TextFieldFormView.swift */; };
 		529B2D0B24962B2800C0CD94 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529B2D0A24962B2800C0CD94 /* LoginController.swift */; };
 		529B2D0D2496808400C0CD94 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529B2D0C2496808400C0CD94 /* ProfileController.swift */; };
+		529B2D0F24968DD700C0CD94 /* ProfilePhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529B2D0E24968DD700C0CD94 /* ProfilePhotoView.swift */; };
 		52D6CBDB24933FDC00C89474 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D6CBDA24933FDC00C89474 /* AppDelegate.swift */; };
 		52D6CBDD24933FDC00C89474 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D6CBDC24933FDC00C89474 /* SceneDelegate.swift */; };
 		52D6CBDF24933FDC00C89474 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D6CBDE24933FDC00C89474 /* AuthViewController.swift */; };
@@ -36,6 +37,7 @@
 		529B2D08249548D100C0CD94 /* TextFieldFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldFormView.swift; sourceTree = "<group>"; };
 		529B2D0A24962B2800C0CD94 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		529B2D0C2496808400C0CD94 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		529B2D0E24968DD700C0CD94 /* ProfilePhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePhotoView.swift; sourceTree = "<group>"; };
 		52D6CBD724933FDC00C89474 /* MySimpleChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySimpleChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6CBDA24933FDC00C89474 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52D6CBDC24933FDC00C89474 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 		529B2D012494D99000C0CD94 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				529B2D0E24968DD700C0CD94 /* ProfilePhotoView.swift */,
 				529B2D022494E6A200C0CD94 /* ButtonFormView.swift */,
 				529B2D08249548D100C0CD94 /* TextFieldFormView.swift */,
 				529B2D002494D97E00C0CD94 /* UIKit */,
@@ -186,6 +189,7 @@
 				52D6CBDF24933FDC00C89474 /* AuthViewController.swift in Sources */,
 				5218FC4A2493B84500E20955 /* UIColorExt.swift in Sources */,
 				52D6CBDB24933FDC00C89474 /* AppDelegate.swift in Sources */,
+				529B2D0F24968DD700C0CD94 /* ProfilePhotoView.swift in Sources */,
 				529B2D0B24962B2800C0CD94 /* LoginController.swift in Sources */,
 				529B2D052495000600C0CD94 /* UISTackViewExt.swift in Sources */,
 				529B2D032494E6A200C0CD94 /* ButtonFormView.swift in Sources */,
