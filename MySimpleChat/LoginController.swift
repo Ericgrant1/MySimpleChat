@@ -14,6 +14,31 @@ class LoginController: UIViewController {
     
     // MARK: - Properties
     
+    let greetingLabel = UILabel(text: "welcome back!", font: .avenir26(), textColor: .white)
+    
+    let loginWithLabel = UILabel(text: "Login with", textColor: .white)
+    let orLabel = UILabel(text: "or", textColor: .white)
+    let emailLabel = UILabel(text: "Email", textColor: .white)
+    let passwordLabel = UILabel(text: "Password", textColor: .white)
+    let dontHaveAccountLabel = UILabel(text: "on't have an account?", textColor: .white)
+    
+    let googleButton = UIButton(title: "Google",
+                                titleColor: .black,
+                                backgroundColor: .white,
+                                isShadow: true)
+    let emailTextField = TextFieldFormView(font: .avenir20())
+    let passwordTextField = TextFieldFormView(font: .avenir20())
+    let loginButton = UIButton(title: "Login",
+                               titleColor: .buttonRed(),
+                               backgroundColor: .white,
+                               isShadow: true)
+    let signUpButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Sign Up", for: .normal)
+        button.setTitleColor(.buttonRed(), for: .normal)
+        button.titleLabel?.font = .avenir20()
+        return button
+    }()
     
     // MARK: - Lifecycle
     
