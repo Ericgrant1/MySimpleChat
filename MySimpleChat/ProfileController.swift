@@ -27,7 +27,7 @@ class ProfileController: UIViewController {
     
     let sexSegmentedControl = UISegmentedControl(first: "Male", second: "Female")
     
-    let goToChatsButton = UIButton(title: "Go to charts!",
+    let goToChatsButton = UIButton(title: "Go to chats!",
                                    titleColor: .white,
                                    backgroundColor: .buttonDark(),
                                    cornerRadius: 4)
@@ -46,13 +46,44 @@ extension ProfileController {
     
     private func configureUI() {
         
+        let fullNameStackView = UIStackView(arrangedSubviews: [fullnameLabel, fullnameTextField],
+                                                axis: .vertical,
+                                                spacing: 0)
+        let aboutMeStackView = UIStackView(arrangedSubviews: [aboutMeLabel, aboutMeTextField],
+                                           axis: .vertical,
+                                           spacing: 0)
+        let sexTextView = UIStackView(arrangedSubviews: [sexLabel, sexSegmentedControl],
+                                      axis: .vertical,
+                                      spacing: 10)
+        
+        goToChatsButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        let stackView = UIStackView(arrangedSubviews: [fullNameStackView, aboutMeStackView, sexTextView, goToChatsButton],
+                                    axis: .vertical,
+                                    spacing: 40)
+        
+        greetingLabel.translatesAutoresizingMaskIntoConstraints = false
         populateImageView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(greetingLabel)
         view.addSubview(populateImageView)
+        view.addSubview(stackView)
         
         NSLayoutConstraint.activate([
-            populateImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 160),
+            greetingLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 160),
+            greetingLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            populateImageView.topAnchor.constraint(equalTo: greetingLabel.bottomAnchor, constant: 40),
             populateImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
+        
+        NSLayoutConstraint.activate([
+             stackView.topAnchor.constraint(equalTo: populateImageView.bottomAnchor, constant: 40),
+             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
+             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
+         ])
     }
 }
 
