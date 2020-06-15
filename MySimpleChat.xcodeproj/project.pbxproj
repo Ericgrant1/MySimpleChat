@@ -18,6 +18,7 @@
 		529B2D0B24962B2800C0CD94 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529B2D0A24962B2800C0CD94 /* LoginController.swift */; };
 		529B2D0D2496808400C0CD94 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529B2D0C2496808400C0CD94 /* ProfileController.swift */; };
 		529B2D0F24968DD700C0CD94 /* ProfilePhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529B2D0E24968DD700C0CD94 /* ProfilePhotoView.swift */; };
+		529B2D11249753BE00C0CD94 /* UISegmenedControlExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529B2D10249753BE00C0CD94 /* UISegmenedControlExt.swift */; };
 		52D6CBDB24933FDC00C89474 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D6CBDA24933FDC00C89474 /* AppDelegate.swift */; };
 		52D6CBDD24933FDC00C89474 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D6CBDC24933FDC00C89474 /* SceneDelegate.swift */; };
 		52D6CBDF24933FDC00C89474 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D6CBDE24933FDC00C89474 /* AuthViewController.swift */; };
@@ -38,6 +39,7 @@
 		529B2D0A24962B2800C0CD94 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		529B2D0C2496808400C0CD94 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		529B2D0E24968DD700C0CD94 /* ProfilePhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePhotoView.swift; sourceTree = "<group>"; };
+		529B2D10249753BE00C0CD94 /* UISegmenedControlExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISegmenedControlExt.swift; sourceTree = "<group>"; };
 		52D6CBD724933FDC00C89474 /* MySimpleChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySimpleChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6CBDA24933FDC00C89474 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52D6CBDC24933FDC00C89474 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 				5218FC472493B5E500E20955 /* UIFontExt.swift */,
 				52D6CBFC2493AFE700C89474 /* UIButtonExt.swift */,
 				529B2D042495000600C0CD94 /* UISTackViewExt.swift */,
+				529B2D10249753BE00C0CD94 /* UISegmenedControlExt.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 				529B2CFF2493BECF00C0CD94 /* UIImageExt.swift in Sources */,
 				52D6CBFD2493AFE700C89474 /* UIButtonExt.swift in Sources */,
 				529B2D07249535E700C0CD94 /* SignUpController.swift in Sources */,
+				529B2D11249753BE00C0CD94 /* UISegmenedControlExt.swift in Sources */,
 				529B2D09249548D100C0CD94 /* TextFieldFormView.swift in Sources */,
 				5218FC482493B5E500E20955 /* UIFontExt.swift in Sources */,
 			);

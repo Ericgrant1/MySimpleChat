@@ -14,7 +14,23 @@ class ProfileController: UIViewController {
     
     // MARK: - Properties
     
+    let greetingLabel = UILabel(text: "Set up profile!", font: .avenir26(), textColor: .white)
+    
     let populateImageView = ProfilePhotoView()
+    
+    let fullnameLabel = UILabel(text: "Fullname", textColor: .white)
+    let aboutMeLabel = UILabel(text: "About me", textColor: .white)
+    let sexLabel = UILabel(text: "Sex", textColor: .white)
+    
+    let fullnameTextField = TextFieldFormView(font: .avenir20())
+    let aboutMeTextField = TextFieldFormView(font: .avenir20())
+    
+    let sexSegmentedControl = UISegmentedControl(first: "Male", second: "Female")
+    
+    let goToChatsButton = UIButton(title: "Go to charts!",
+                                   titleColor: .white,
+                                   backgroundColor: .buttonDark(),
+                                   cornerRadius: 4)
     
     // MARK: - Lifecycle
     
