@@ -17,7 +17,7 @@ class ProfilePhotoView: UIView {
         let iv = UIImageView()
         iv.translatesAutoresizingMaskIntoConstraints = false
         iv.image = #imageLiteral(resourceName: "avatar").withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
-        iv.tintColor = .buttonWhite()
+        iv.tintColor = .mainWhite()
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
         iv.layer.borderColor = UIColor.white.cgColor
@@ -30,7 +30,7 @@ class ProfilePhotoView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         let plusImage = #imageLiteral(resourceName: "plus")
         button.setImage(plusImage, for: .normal)
-        button.tintColor = .buttonWhite()
+        button.tintColor = .mainWhite()
         return button
     }()
     
