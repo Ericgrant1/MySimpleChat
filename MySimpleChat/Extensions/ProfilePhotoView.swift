@@ -17,7 +17,7 @@ class ProfilePhotoView: UIView {
         let iv = UIImageView()
         iv.translatesAutoresizingMaskIntoConstraints = false
         iv.image = #imageLiteral(resourceName: "avatar").withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
-        iv.tintColor = UIColor.white
+        iv.tintColor = .buttonWhite()
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
         iv.layer.borderColor = UIColor.white.cgColor

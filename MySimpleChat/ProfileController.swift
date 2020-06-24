@@ -42,6 +42,8 @@ class ProfileController: UIViewController {
     }
 }
 
+// MARK: - Setup constraints
+
 extension ProfileController {
     
     private func configureUI() {
