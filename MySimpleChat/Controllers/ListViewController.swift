@@ -32,6 +32,12 @@ class ListViewController: UIViewController {
     private func setupSearchBar() {
         navigationController?.navigationBar.barTintColor = .mainWhite()
         navigationController?.navigationBar.shadowImage = UIImage()
+        let searchController = UISearchController(searchResultsController: nil)
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.delegate = self
     }
     
     private func configureCollectionView() {
@@ -44,6 +50,15 @@ class ListViewController: UIViewController {
         
         collectionView.delegate = self
         collectionView.dataSource = self
+    }
+}
+
+// MARK: - UISearchBarDelegate
+
+extension ListViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print(searchText)
     }
 }
 
