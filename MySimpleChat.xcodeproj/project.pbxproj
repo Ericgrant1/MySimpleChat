@@ -88,6 +88,26 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		52C98A9524A366B30095571C /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				52D6CBDE24933FDC00C89474 /* AuthViewController.swift */,
+				529B2D06249535E700C0CD94 /* SignUpController.swift */,
+				529B2D0A24962B2800C0CD94 /* LoginController.swift */,
+				529B2D0C2496808400C0CD94 /* ProfileController.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		52C98A9624A367910095571C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				52C98A9524A366B30095571C /* Authentication */,
+				52C98A9324A357B50095571C /* ListViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		52D6CBCE24933FDC00C89474 = {
 			isa = PBXGroup;
 			children = (
@@ -109,11 +129,7 @@
 			children = (
 				52D6CBDA24933FDC00C89474 /* AppDelegate.swift */,
 				52D6CBDC24933FDC00C89474 /* SceneDelegate.swift */,
-				52D6CBDE24933FDC00C89474 /* AuthViewController.swift */,
-				529B2D06249535E700C0CD94 /* SignUpController.swift */,
-				529B2D0A24962B2800C0CD94 /* LoginController.swift */,
-				529B2D0C2496808400C0CD94 /* ProfileController.swift */,
-				52C98A9324A357B50095571C /* ListViewController.swift */,
+				52C98A9624A367910095571C /* Controllers */,
 				529B2D012494D99000C0CD94 /* Extensions */,
 				52D6CBE324933FDD00C89474 /* Assets.xcassets */,
 				52D6CBE524933FDD00C89474 /* LaunchScreen.storyboard */,
