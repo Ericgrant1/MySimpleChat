@@ -20,6 +20,7 @@
 		529B2D0F24968DD700C0CD94 /* ProfilePhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529B2D0E24968DD700C0CD94 /* ProfilePhotoView.swift */; };
 		529B2D11249753BE00C0CD94 /* UISegmenedControlExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529B2D10249753BE00C0CD94 /* UISegmenedControlExt.swift */; };
 		52C98A9424A357B50095571C /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C98A9324A357B50095571C /* ListViewController.swift */; };
+		52C98A9824A369980095571C /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C98A9724A369980095571C /* ContactsViewController.swift */; };
 		52D6CBDB24933FDC00C89474 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D6CBDA24933FDC00C89474 /* AppDelegate.swift */; };
 		52D6CBDD24933FDC00C89474 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D6CBDC24933FDC00C89474 /* SceneDelegate.swift */; };
 		52D6CBDF24933FDC00C89474 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D6CBDE24933FDC00C89474 /* AuthViewController.swift */; };
@@ -42,6 +43,7 @@
 		529B2D0E24968DD700C0CD94 /* ProfilePhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePhotoView.swift; sourceTree = "<group>"; };
 		529B2D10249753BE00C0CD94 /* UISegmenedControlExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISegmenedControlExt.swift; sourceTree = "<group>"; };
 		52C98A9324A357B50095571C /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		52C98A9724A369980095571C /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		52D6CBD724933FDC00C89474 /* MySimpleChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySimpleChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6CBDA24933FDC00C89474 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52D6CBDC24933FDC00C89474 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				52C98A9524A366B30095571C /* Authentication */,
+				52C98A9724A369980095571C /* ContactsViewController.swift */,
 				52C98A9324A357B50095571C /* ListViewController.swift */,
 			);
 			path = Controllers;
@@ -213,6 +216,7 @@
 				5218FC4A2493B84500E20955 /* UIColorExt.swift in Sources */,
 				52D6CBDB24933FDC00C89474 /* AppDelegate.swift in Sources */,
 				529B2D0F24968DD700C0CD94 /* ProfilePhotoView.swift in Sources */,
+				52C98A9824A369980095571C /* ContactsViewController.swift in Sources */,
 				529B2D0B24962B2800C0CD94 /* LoginController.swift in Sources */,
 				529B2D052495000600C0CD94 /* UISTackViewExt.swift in Sources */,
 				529B2D032494E6A200C0CD94 /* ButtonFormView.swift in Sources */,
