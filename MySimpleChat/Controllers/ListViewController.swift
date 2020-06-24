@@ -75,14 +75,14 @@ struct ListViewControllerProvider: PreviewProvider {
     
     struct ContainerView: UIViewControllerRepresentable {
         
-        let listVC = ListViewController()
+        let tabBarVC = MainTabBarController()
         
-        func makeUIViewController(context: Context) -> ListViewController {
-            return listVC
+        func makeUIViewController(context: Context) -> MainTabBarController {
+            return tabBarVC
         }
         
-        func updateUIViewController(_ uiViewController: ListViewController, context: Context) {
-            
+        func updateUIViewController(_ uiViewController: MainTabBarController, context: Context) {
         }
+        
     }
 }
