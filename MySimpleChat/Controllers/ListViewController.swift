@@ -83,6 +83,5 @@ struct ListViewControllerProvider: PreviewProvider {
         
         func updateUIViewController(_ uiViewController: MainTabBarController, context: Context) {
         }
-        
     }
 }

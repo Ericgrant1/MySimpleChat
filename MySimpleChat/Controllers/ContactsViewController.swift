@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 
 class ContactsViewController: UIViewController {
     
@@ -15,5 +16,26 @@ class ContactsViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .white
+    }
+}
+
+// MARK: - SwiftUI
+
+struct ContactsViewControllerProvider: PreviewProvider {
+    
+    static var previews: some View {
+        ContainerView().edgesIgnoringSafeArea(.all)
+    }
+    
+    struct ContainerView: UIViewControllerRepresentable {
+        
+        let tabBarVC = MainTabBarController()
+        
+        func makeUIViewController(context: Context) -> MainTabBarController {
+            return tabBarVC
+        }
+        
+        func updateUIViewController(_ uiViewController: MainTabBarController, context: Context) {
+        }
     }
 }

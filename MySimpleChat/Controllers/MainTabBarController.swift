@@ -29,7 +29,7 @@ class MainTabBarController: UITabBarController {
         
         viewControllers = [
             createNavigationController(rootViewController: contactsViewController,
-                                       title: "People",
+                                       title: "Contacts",
                                        image: peopleImage),
             createNavigationController(rootViewController: listViewController,
                                        title: "Conversation",
