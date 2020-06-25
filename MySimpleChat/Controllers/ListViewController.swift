@@ -10,13 +10,34 @@ import Foundation
 import UIKit
 import SwiftUI
 
-private let reuseIdentifier = "ListCell"
+enum Section: Int, CaseIterable {
+    case activeChats
+}
+
+struct MyChat: Hashable {
+    var username: String
+    var userImage: UIImage
+    var lastMessage: String
+    var id = UUID()
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
+    static func == (lhs: MyChat, rhs: MyChat) -> Bool {
+        return lhs.id == rhs.id
+    }
+}
+
+private var reuseIdentifier = "ListCell"
+
 
 class ListViewController: UIViewController {
     
     // MARK: - Properties
     
     var collectionView: UICollectionView!
+    var dataSource: UICollectionViewDiffableDataSource<Section, MyChat>?
     
     // MARK: - Lifecycle
     
@@ -47,9 +68,20 @@ class ListViewController: UIViewController {
         view.addSubview(collectionView)
         
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-        
-        collectionView.delegate = self
-        collectionView.dataSource = self
+    }
+    
+    private func setupDataSource() {
+        dataSource = UICollectionViewDiffableDataSource<Section, MyChat>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, chat) -> UICollectionViewCell? in
+            guard let secttion = Section(rawValue: indexPath.section) else { fatalError("Unknown section kind")
+            }
+            
+            switch secttion {
+            case .activeChats:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+                cell.backgroundColor = .systemBlue
+                return cell
+            }
+        })
     }
     
     private func createCellCompositionLayout() -> UICollectionViewLayout {
@@ -76,28 +108,6 @@ extension ListViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print(searchText)
-    }
-}
-
-// MARK: - UICollectionViewDelegate
-
-extension ListViewController: UICollectionViewDelegate {
-    
-}
-
-// MARK: - UICollectionViewDataSource
-
-extension ListViewController: UICollectionViewDataSource {
-   
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-        cell.backgroundColor = .orange
-        cell.layer.borderWidth = 1
-        return cell
     }
 }
 
