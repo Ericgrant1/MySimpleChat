@@ -31,10 +31,16 @@ struct MyChat: Hashable {
 
 private var reuseIdentifier = "ListCell"
 
-
 class ListViewController: UIViewController {
     
     // MARK: - Properties
+    
+    let activeChats: [MyChat] = [
+        MyChat(username: "Aron", userImage: UIImage(named: "human1")!, lastMessage: "How are you?"),
+        MyChat(username: "David", userImage: UIImage(named: "human2")!, lastMessage: "How are you?"),
+        MyChat(username: "Eric", userImage: UIImage(named: "human3")!, lastMessage: "How are you?"),
+        MyChat(username: "Zara", userImage: UIImage(named: "human4")!, lastMessage: "How are you?")
+    ]
     
     var collectionView: UICollectionView!
     var dataSource: UICollectionViewDiffableDataSource<Section, MyChat>?
@@ -46,6 +52,8 @@ class ListViewController: UIViewController {
         
         setupSearchBar()
         configureCollectionView()
+        setupDataSource()
+        reloadData()
     }
     
     // MARK: - Helpers
@@ -82,6 +90,13 @@ class ListViewController: UIViewController {
                 return cell
             }
         })
+    }
+    
+    private func reloadData() {
+        var snapshot = NSDiffableDataSourceSnapshot<Section, MyChat>()
+        snapshot.appendSections([.activeChats])
+        snapshot.appendItems(activeChats, toSection: .activeChats)
+        dataSource?.apply(snapshot, animatingDifferences: true)
     }
     
     private func createCellCompositionLayout() -> UICollectionViewLayout {
