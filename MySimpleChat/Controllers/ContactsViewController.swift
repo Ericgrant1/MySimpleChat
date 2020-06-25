@@ -26,7 +26,7 @@ class ContactsViewController: UIViewController {
         navigationController?.navigationBar.shadowImage = UIImage()
         let searchController = UISearchController(searchResultsController: nil)
         navigationItem.searchController = searchController
-        // navigationItem.hidesSearchBarWhenScrolling = false
+        navigationItem.hidesSearchBarWhenScrolling = false
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.delegate = self
