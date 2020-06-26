@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5218FC482493B5E500E20955 /* UIFontExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5218FC472493B5E500E20955 /* UIFontExt.swift */; };
 		5218FC4A2493B84500E20955 /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5218FC492493B84500E20955 /* UIColorExt.swift */; };
+		526D52F524A5FAB500DB6E71 /* BundleDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526D52F424A5FAB500DB6E71 /* BundleDecodable.swift */; };
 		529B2CFD2493BCDE00C0CD94 /* UILabelExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529B2CFC2493BCDE00C0CD94 /* UILabelExt.swift */; };
 		529B2CFF2493BECF00C0CD94 /* UIImageExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529B2CFE2493BECF00C0CD94 /* UIImageExt.swift */; };
 		529B2D032494E6A200C0CD94 /* ButtonFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529B2D022494E6A200C0CD94 /* ButtonFormView.swift */; };
@@ -33,6 +34,7 @@
 /* Begin PBXFileReference section */
 		5218FC472493B5E500E20955 /* UIFontExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExt.swift; sourceTree = "<group>"; };
 		5218FC492493B84500E20955 /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
+		526D52F424A5FAB500DB6E71 /* BundleDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleDecodable.swift; sourceTree = "<group>"; };
 		529B2CFC2493BCDE00C0CD94 /* UILabelExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExt.swift; sourceTree = "<group>"; };
 		529B2CFE2493BECF00C0CD94 /* UIImageExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExt.swift; sourceTree = "<group>"; };
 		529B2D022494E6A200C0CD94 /* ButtonFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFormView.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				529B2D0E24968DD700C0CD94 /* ProfilePhotoView.swift */,
 				529B2D022494E6A200C0CD94 /* ButtonFormView.swift */,
 				529B2D08249548D100C0CD94 /* TextFieldFormView.swift */,
+				526D52F424A5FAB500DB6E71 /* BundleDecodable.swift */,
 				529B2D002494D97E00C0CD94 /* UIKit */,
 			);
 			path = Extensions;
@@ -223,6 +226,7 @@
 				529B2D0B24962B2800C0CD94 /* LoginController.swift in Sources */,
 				529B2D052495000600C0CD94 /* UISTackViewExt.swift in Sources */,
 				529B2D032494E6A200C0CD94 /* ButtonFormView.swift in Sources */,
+				526D52F524A5FAB500DB6E71 /* BundleDecodable.swift in Sources */,
 				52D6CBDD24933FDC00C89474 /* SceneDelegate.swift in Sources */,
 				529B2D0D2496808400C0CD94 /* ProfileController.swift in Sources */,
 				529B2CFD2493BCDE00C0CD94 /* UILabelExt.swift in Sources */,

@@ -36,10 +36,18 @@ class ListViewController: UIViewController {
     // MARK: - Properties
     
     let activeChats: [MyChat] = [
-        MyChat(username: "Aron", userImage: UIImage(named: "human1")!, lastMessage: "How are you?"),
-        MyChat(username: "David", userImage: UIImage(named: "human2")!, lastMessage: "How are you?"),
-        MyChat(username: "Eric", userImage: UIImage(named: "human3")!, lastMessage: "How are you?"),
-        MyChat(username: "Zara", userImage: UIImage(named: "human4")!, lastMessage: "How are you?")
+        MyChat(username: "Aron",
+               userImage: UIImage(named: "human1")!,
+               lastMessage: "How are you?"),
+        MyChat(username: "David",
+               userImage: UIImage(named: "human2")!,
+               lastMessage: "How are you?"),
+        MyChat(username: "Eric",
+               userImage: UIImage(named: "human3")!,
+               lastMessage: "How are you?"),
+        MyChat(username: "Zara",
+               userImage: UIImage(named: "human4")!,
+               lastMessage: "How are you?")
     ]
     
     var collectionView: UICollectionView!
