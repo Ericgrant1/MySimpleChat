@@ -12,6 +12,7 @@ import SwiftUI
 
 enum Section: Int, CaseIterable {
     case activeChats
+    case waitingChats
 }
 
 struct MyChat: Hashable, Decodable {
@@ -29,13 +30,15 @@ struct MyChat: Hashable, Decodable {
     }
 }
 
-private var reuseIdentifier = "ListCell"
+private var reuseIdentifierFirst = "ListCell1"
+private var reuseIdentifierSecond = "ListCell2"
 
 class ListViewController: UIViewController {
     
     // MARK: - Properties
     
     let activeChats = Bundle.main.decode([MyChat].self, from: "activeChats.json")
+    let waitingChats = Bundle.main.decode([MyChat].self, from: "waitingChats.json")
     
     var collectionView: UICollectionView!
     var dataSource: UICollectionViewDiffableDataSource<Section, MyChat>?
@@ -70,7 +73,8 @@ class ListViewController: UIViewController {
         collectionView.backgroundColor = .mainWhite()
         view.addSubview(collectionView)
         
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifierFirst)
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifierSecond)
     }
     
     private func setupDataSource() {
@@ -80,8 +84,12 @@ class ListViewController: UIViewController {
             
             switch secttion {
             case .activeChats:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifierFirst, for: indexPath)
                 cell.backgroundColor = .systemBlue
+                return cell
+            case .waitingChats:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifierSecond, for: indexPath)
+                cell.backgroundColor = .systemRed
                 return cell
             }
         })
@@ -89,8 +97,12 @@ class ListViewController: UIViewController {
     
     private func reloadData() {
         var snapshot = NSDiffableDataSourceSnapshot<Section, MyChat>()
-        snapshot.appendSections([.activeChats])
+        
+        snapshot.appendSections([.activeChats, .waitingChats])
+        
+        snapshot.appendItems(waitingChats, toSection: .waitingChats)
         snapshot.appendItems(activeChats, toSection: .activeChats)
+        
         dataSource?.apply(snapshot, animatingDifferences: true)
     }
     
