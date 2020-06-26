@@ -11,8 +11,8 @@ import UIKit
 import SwiftUI
 
 enum Section: Int, CaseIterable {
-    case activeChats
     case waitingChats
+    case activeChats
 }
 
 struct MyChat: Hashable, Decodable {
@@ -98,7 +98,7 @@ class ListViewController: UIViewController {
     private func reloadData() {
         var snapshot = NSDiffableDataSourceSnapshot<Section, MyChat>()
         
-        snapshot.appendSections([.activeChats, .waitingChats])
+        snapshot.appendSections([.waitingChats, .activeChats])
         
         snapshot.appendItems(waitingChats, toSection: .waitingChats)
         snapshot.appendItems(activeChats, toSection: .activeChats)
@@ -108,19 +108,50 @@ class ListViewController: UIViewController {
     
     private func createCellCompositionLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewCompositionalLayout { (sectionIndex, layoutEnviroment) -> NSCollectionLayoutSection? in
-            
-            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
-            let item = NSCollectionLayoutItem(layoutSize: itemSize)
-            
-            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(86))
-            let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
-            group.contentInsets = NSDirectionalEdgeInsets.init(top: 0, leading: 0, bottom: 8, trailing: 0)
-            
-            let section = NSCollectionLayoutSection(group: group)
-            section.contentInsets = NSDirectionalEdgeInsets.init(top: 16, leading: 20, bottom: 0, trailing: 20)
-            return section
+            guard let secttion = Section(rawValue: sectionIndex) else { fatalError("Unknown section kind")
+            }
+            switch secttion {
+            case .activeChats:
+                return self.setupActiveChats()
+            case .waitingChats:
+                return self.setupWaitingChats()
+            }
         }
         return layout
+    }
+    
+    private func setupWaitingChats() -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+                                              heightDimension: .fractionalHeight(1))
+        
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(90), heightDimension: .absolute(90))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.interGroupSpacing = 20
+        section.contentInsets = NSDirectionalEdgeInsets.init(top: 16, leading: 20, bottom: 0, trailing: 20)
+        section.orthogonalScrollingBehavior = .continuous
+        return section
+    }
+    
+    private func setupActiveChats() -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+                                              heightDimension: .fractionalHeight(1))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+                                               heightDimension: .absolute(90))
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.interGroupSpacing = 10
+        section.contentInsets = NSDirectionalEdgeInsets.init(top: 16,
+                                                             leading: 20,
+                                                             bottom: 0,
+                                                             trailing: 20)
+        return section
     }
 }
 
