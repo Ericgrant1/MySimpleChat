@@ -77,6 +77,23 @@ class ListViewController: UIViewController {
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifierSecond)
     }
     
+    private func reloadData() {
+        var snapshot = NSDiffableDataSourceSnapshot<Section, MyChat>()
+        
+        snapshot.appendSections([.waitingChats, .activeChats])
+        
+        snapshot.appendItems(waitingChats, toSection: .waitingChats)
+        snapshot.appendItems(activeChats, toSection: .activeChats)
+        
+        dataSource?.apply(snapshot, animatingDifferences: true)
+    }
+    
+}
+
+// MARK: - Data Source
+
+extension ListViewController {
+    
     private func setupDataSource() {
         dataSource = UICollectionViewDiffableDataSource<Section, MyChat>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, chat) -> UICollectionViewCell? in
             guard let secttion = Section(rawValue: indexPath.section) else { fatalError("Unknown section kind")
@@ -94,17 +111,11 @@ class ListViewController: UIViewController {
             }
         })
     }
-    
-    private func reloadData() {
-        var snapshot = NSDiffableDataSourceSnapshot<Section, MyChat>()
-        
-        snapshot.appendSections([.waitingChats, .activeChats])
-        
-        snapshot.appendItems(waitingChats, toSection: .waitingChats)
-        snapshot.appendItems(activeChats, toSection: .activeChats)
-        
-        dataSource?.apply(snapshot, animatingDifferences: true)
-    }
+}
+
+// MARK: - Configure Layout
+
+extension ListViewController {
     
     private func createCellCompositionLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewCompositionalLayout { (sectionIndex, layoutEnviroment) -> NSCollectionLayoutSection? in
@@ -126,12 +137,16 @@ class ListViewController: UIViewController {
         
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
-        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(90), heightDimension: .absolute(90))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(90),
+                                               heightDimension: .absolute(90))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         
         let section = NSCollectionLayoutSection(group: group)
         section.interGroupSpacing = 20
-        section.contentInsets = NSDirectionalEdgeInsets.init(top: 16, leading: 20, bottom: 0, trailing: 20)
+        section.contentInsets = NSDirectionalEdgeInsets.init(top: 16,
+                                                             leading: 20,
+                                                             bottom: 0,
+                                                             trailing: 20)
         section.orthogonalScrollingBehavior = .continuous
         return section
     }
