@@ -14,11 +14,11 @@ enum Section: Int, CaseIterable {
     case activeChats
 }
 
-struct MyChat: Hashable {
+struct MyChat: Hashable, Decodable {
     var username: String
-    var userImage: UIImage
+    var userImageString: String
     var lastMessage: String
-    var id = UUID()
+    var id: Int
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
@@ -35,20 +35,7 @@ class ListViewController: UIViewController {
     
     // MARK: - Properties
     
-    let activeChats: [MyChat] = [
-        MyChat(username: "Aron",
-               userImage: UIImage(named: "human1")!,
-               lastMessage: "How are you?"),
-        MyChat(username: "David",
-               userImage: UIImage(named: "human2")!,
-               lastMessage: "How are you?"),
-        MyChat(username: "Eric",
-               userImage: UIImage(named: "human3")!,
-               lastMessage: "How are you?"),
-        MyChat(username: "Zara",
-               userImage: UIImage(named: "human4")!,
-               lastMessage: "How are you?")
-    ]
+    let activeChats = Bundle.main.decode([MyChat].self, from: "activeChats.json")
     
     var collectionView: UICollectionView!
     var dataSource: UICollectionViewDiffableDataSource<Section, MyChat>?
