@@ -10,6 +10,8 @@
 		5218FC482493B5E500E20955 /* UIFontExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5218FC472493B5E500E20955 /* UIFontExt.swift */; };
 		5218FC4A2493B84500E20955 /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5218FC492493B84500E20955 /* UIColorExt.swift */; };
 		526D52F524A5FAB500DB6E71 /* BundleDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526D52F424A5FAB500DB6E71 /* BundleDecodable.swift */; };
+		526D52F824A5FF2700DB6E71 /* activeChats.json in Resources */ = {isa = PBXBuildFile; fileRef = 526D52F624A5FF2700DB6E71 /* activeChats.json */; };
+		526D52F924A5FF2700DB6E71 /* waitingChats.json in Resources */ = {isa = PBXBuildFile; fileRef = 526D52F724A5FF2700DB6E71 /* waitingChats.json */; };
 		529B2CFD2493BCDE00C0CD94 /* UILabelExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529B2CFC2493BCDE00C0CD94 /* UILabelExt.swift */; };
 		529B2CFF2493BECF00C0CD94 /* UIImageExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529B2CFE2493BECF00C0CD94 /* UIImageExt.swift */; };
 		529B2D032494E6A200C0CD94 /* ButtonFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529B2D022494E6A200C0CD94 /* ButtonFormView.swift */; };
@@ -35,6 +37,8 @@
 		5218FC472493B5E500E20955 /* UIFontExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExt.swift; sourceTree = "<group>"; };
 		5218FC492493B84500E20955 /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
 		526D52F424A5FAB500DB6E71 /* BundleDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleDecodable.swift; sourceTree = "<group>"; };
+		526D52F624A5FF2700DB6E71 /* activeChats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = activeChats.json; sourceTree = "<group>"; };
+		526D52F724A5FF2700DB6E71 /* waitingChats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = waitingChats.json; sourceTree = "<group>"; };
 		529B2CFC2493BCDE00C0CD94 /* UILabelExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExt.swift; sourceTree = "<group>"; };
 		529B2CFE2493BECF00C0CD94 /* UIImageExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExt.swift; sourceTree = "<group>"; };
 		529B2D022494E6A200C0CD94 /* ButtonFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFormView.swift; sourceTree = "<group>"; };
@@ -79,6 +83,8 @@
 				52D6CBFC2493AFE700C89474 /* UIButtonExt.swift */,
 				529B2D042495000600C0CD94 /* UISTackViewExt.swift */,
 				529B2D10249753BE00C0CD94 /* UISegmenedControlExt.swift */,
+				526D52F624A5FF2700DB6E71 /* activeChats.json */,
+				526D52F724A5FF2700DB6E71 /* waitingChats.json */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -206,7 +212,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				52D6CBE724933FDD00C89474 /* LaunchScreen.storyboard in Resources */,
+				526D52F824A5FF2700DB6E71 /* activeChats.json in Resources */,
 				52D6CBE424933FDD00C89474 /* Assets.xcassets in Resources */,
+				526D52F924A5FF2700DB6E71 /* waitingChats.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

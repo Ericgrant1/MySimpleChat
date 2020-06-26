@@ -1,0 +1,33 @@
+[
+    {
+        "username": "Ryan Gosling",
+        "userImageString": "human1",
+        "lastMessage": "How are you?",
+        "id": 1
+    },
+    {
+        "username": "Hugh Jackman",
+        "userImageString": "human2",
+        "lastMessage": "Where are you?",
+        "id": 2
+    },
+    {
+        "username": "Chris Hemsworth",
+        "userImageString": "human3",
+        "lastMessage": "Who are you?",
+        "id": 3
+    },
+    {
+        "username": "Alex Film",
+        "userImageString": "human4",
+        "lastMessage": "How old are you?",
+        "id": 4
+    },
+    {
+        "username": "Zara Larsson",
+        "userImageString": "human5",
+        "lastMessage": "Where are we?",
+        "id": 5
+    }
+]
+
