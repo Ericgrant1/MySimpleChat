@@ -30,7 +30,6 @@ struct MyChat: Hashable, Decodable {
     }
 }
 
-private var reuseIdentifierFirst = "ListCell1"
 private var reuseIdentifierSecond = "ListCell2"
 
 class ListViewController: UIViewController {
@@ -73,7 +72,7 @@ class ListViewController: UIViewController {
         collectionView.backgroundColor = .mainWhite()
         view.addSubview(collectionView)
         
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifierFirst)
+        collectionView.register(ActiveChatsCell.self, forCellWithReuseIdentifier: ActiveChatsCell.reuseId)
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifierSecond)
     }
     
@@ -94,6 +93,12 @@ class ListViewController: UIViewController {
 
 extension ListViewController {
     
+    private func configure<T: ConfigureCell>(cellType: T.Type, with value: MyChat, for indexPath: IndexPath) -> T {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellType.reuseId, for: indexPath) as? T else { fatalError("Unable to dequeue \(cellType)")}
+        cell.configure(with: value)
+        return cell
+    }
+    
     private func setupDataSource() {
         dataSource = UICollectionViewDiffableDataSource<Section, MyChat>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, chat) -> UICollectionViewCell? in
             guard let secttion = Section(rawValue: indexPath.section) else { fatalError("Unknown section kind")
@@ -101,9 +106,7 @@ extension ListViewController {
             
             switch secttion {
             case .activeChats:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifierFirst, for: indexPath)
-                cell.backgroundColor = .systemBlue
-                return cell
+                return self.configure(cellType: ActiveChatsCell.self, with: chat, for: indexPath)
             case .waitingChats:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifierSecond, for: indexPath)
                 cell.backgroundColor = .systemRed

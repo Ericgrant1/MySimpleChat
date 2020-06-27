@@ -30,6 +30,9 @@ class ActiveChatsCell: UICollectionViewCell, ConfigureCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        backgroundColor = .purple
+        configureUI()
     }
     
     required init?(coder: NSCoder) {
@@ -40,6 +43,24 @@ class ActiveChatsCell: UICollectionViewCell, ConfigureCell {
     
     func configure(with value: MyChat) {
         print("123")
+    }
+    
+    private func configureUI() {
+        friendImageView.translatesAutoresizingMaskIntoConstraints = false
+        friendName.translatesAutoresizingMaskIntoConstraints = false
+        lastMessage.translatesAutoresizingMaskIntoConstraints = false
+        gradientView.translatesAutoresizingMaskIntoConstraints = false
+        
+        friendImageView.backgroundColor = .green
+        
+        addSubview(friendImageView)
+        
+        NSLayoutConstraint.activate([
+            friendImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            friendImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            friendImageView.heightAnchor.constraint(equalToConstant: 90),
+            friendImageView.widthAnchor.constraint(equalToConstant: 90)
+        ])
     }
 }
 
