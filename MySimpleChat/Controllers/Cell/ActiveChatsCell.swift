@@ -45,7 +45,9 @@ class ActiveChatsCell: UICollectionViewCell, ConfigureCell {
     // MARK: - Helpers
     
     func configure(with value: MyChat) {
-        print("123")
+        friendImageView.image = UIImage(named: value.userImageString)
+        friendName.text = value.username
+        lastMessage.text = value.lastMessage
     }
     
     private func configureUI() {
