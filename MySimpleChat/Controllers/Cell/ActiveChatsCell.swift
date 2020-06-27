@@ -19,7 +19,9 @@ class ActiveChatsCell: UICollectionViewCell, ConfigureCell {
     static var reuseId: String = "ActiveCahtsCell"
     
     let friendImageView = UIImageView()
-    let friendName = UILabel(text: "User Name", textColor: .black)
+    let friendName = UILabel(text: "User Name", font: .laoSangamMN20(), textColor: .black)
+    let lastMessage = UILabel(text: "How are you?", font: .laoSangamMN18(), textColor: .black)
+    let gradientView = UIView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
