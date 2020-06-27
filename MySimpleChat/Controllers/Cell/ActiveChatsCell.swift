@@ -31,8 +31,11 @@ class ActiveChatsCell: UICollectionViewCell, ConfigureCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = .purple
+        backgroundColor = .white
         configureUI()
+        
+        self.layer.cornerRadius = 4
+        self.clipsToBounds = true
     }
     
     required init?(coder: NSCoder) {
@@ -52,14 +55,37 @@ class ActiveChatsCell: UICollectionViewCell, ConfigureCell {
         gradientView.translatesAutoresizingMaskIntoConstraints = false
         
         friendImageView.backgroundColor = .green
+        gradientView.backgroundColor = .black
         
         addSubview(friendImageView)
+        addSubview(friendName)
+        addSubview(lastMessage)
+        addSubview(gradientView)
         
         NSLayoutConstraint.activate([
             friendImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             friendImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             friendImageView.heightAnchor.constraint(equalToConstant: 90),
             friendImageView.widthAnchor.constraint(equalToConstant: 90)
+        ])
+        
+        NSLayoutConstraint.activate([
+            friendName.topAnchor.constraint(equalTo: self.topAnchor, constant: 18),
+            friendName.leadingAnchor.constraint(equalTo: friendImageView.trailingAnchor, constant: 16),
+            friendName.trailingAnchor.constraint(equalTo: gradientView.leadingAnchor, constant: 16)
+        ])
+        
+        NSLayoutConstraint.activate([
+            lastMessage.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -18),
+            lastMessage.leadingAnchor.constraint(equalTo: friendImageView.trailingAnchor, constant: 16),
+            lastMessage.trailingAnchor.constraint(equalTo: gradientView.leadingAnchor, constant: 16)
+        ])
+        
+        NSLayoutConstraint.activate([
+            gradientView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            gradientView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            gradientView.heightAnchor.constraint(equalToConstant: 90),
+            gradientView.widthAnchor.constraint(equalToConstant: 10)
         ])
     }
 }
