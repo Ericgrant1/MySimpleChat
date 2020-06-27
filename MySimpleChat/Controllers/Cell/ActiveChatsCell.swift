@@ -49,6 +49,11 @@ class ActiveChatsCell: UICollectionViewCell, ConfigureCell {
         friendName.text = value.username
         lastMessage.text = value.lastMessage
     }
+}
+
+// MARK: - Setup Constraints
+
+extension ActiveChatsCell {
     
     private func configureUI() {
         friendImageView.translatesAutoresizingMaskIntoConstraints = false
