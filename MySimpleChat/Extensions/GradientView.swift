@@ -64,5 +64,14 @@ class GradientView: UIView {
     
     private func configureGradient(from: Point, to: Point, startColor: UIColor?, endColor: UIColor?) {
         self.layer.addSublayer(gradientLayer)
+        configureGradientColors(startColor: startColor, endColor: endColor)
+        gradientLayer.startPoint = from.point
+        gradientLayer.endPoint = to.point
+    }
+    
+    private func configureGradientColors(startColor: UIColor?, endColor: UIColor?) {
+        if let startColor = startColor, let endColor = endColor {
+            gradientLayer.colors = [startColor.cgColor, endColor.cgColor]
+        }
     }
 }
