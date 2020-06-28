@@ -46,7 +46,11 @@ enum Point {
 
 class GradientView: UIView {
     
+    // MARK: - Properties
+    
     private let gradientLayer = CAGradientLayer()
+    
+    // MARK: - Lifecycle
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -54,5 +58,11 @@ class GradientView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Helpers
+    
+    private func configureGradient(from: Point, to: Point, startColor: UIColor?, endColor: UIColor?) {
+        self.layer.addSublayer(gradientLayer)
     }
 }
