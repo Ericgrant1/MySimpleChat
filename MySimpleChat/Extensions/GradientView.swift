@@ -50,14 +50,38 @@ class GradientView: UIView {
     
     private let gradientLayer = CAGradientLayer()
     
+    @IBInspectable private var startColor: UIColor? {
+        didSet {
+            configureGradientColors(startColor: startColor, endColor: endColor)
+        }
+    }
+    
+    @IBInspectable private var endColor: UIColor? {
+        didSet {
+            configureGradientColors(startColor: startColor, endColor: endColor)
+        }
+    }
+    
     // MARK: - Lifecycle
+    
+    init(from: Point, to: Point, startColor: UIColor?, endColor: UIColor?) {
+        self.init()
+        configureGradient(from: from, to: to, startColor: startColor, endColor: endColor)
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        gradientLayer.frame = bounds
+    }
+    
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
+        configureGradient(from: .leading, to: .trailing, startColor: startColor, endColor: endColor)
     }
     
     // MARK: - Helpers
