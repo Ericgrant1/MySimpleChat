@@ -24,6 +24,7 @@
 		529B2D0F24968DD700C0CD94 /* ProfilePhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529B2D0E24968DD700C0CD94 /* ProfilePhotoView.swift */; };
 		529B2D11249753BE00C0CD94 /* UISegmenedControlExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529B2D10249753BE00C0CD94 /* UISegmenedControlExt.swift */; };
 		52B7771024A870CD007337E6 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B7770F24A870CD007337E6 /* GradientView.swift */; };
+		52B7771224A99114007337E6 /* WaitingChatsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B7771124A99114007337E6 /* WaitingChatsCell.swift */; };
 		52C98A9424A357B50095571C /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C98A9324A357B50095571C /* ListViewController.swift */; };
 		52C98A9824A369980095571C /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C98A9724A369980095571C /* ContactsViewController.swift */; };
 		52C98A9A24A36AC90095571C /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C98A9924A36AC90095571C /* MainTabBarController.swift */; };
@@ -53,6 +54,7 @@
 		529B2D0E24968DD700C0CD94 /* ProfilePhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePhotoView.swift; sourceTree = "<group>"; };
 		529B2D10249753BE00C0CD94 /* UISegmenedControlExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISegmenedControlExt.swift; sourceTree = "<group>"; };
 		52B7770F24A870CD007337E6 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		52B7771124A99114007337E6 /* WaitingChatsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingChatsCell.swift; sourceTree = "<group>"; };
 		52C98A9324A357B50095571C /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		52C98A9724A369980095571C /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		52C98A9924A36AC90095571C /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				520DCAFD24A786560085D4FC /* ActiveChatsCell.swift */,
+				52B7771124A99114007337E6 /* WaitingChatsCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 				529B2D07249535E700C0CD94 /* SignUpController.swift in Sources */,
 				520DCAFE24A786560085D4FC /* ActiveChatsCell.swift in Sources */,
 				529B2D11249753BE00C0CD94 /* UISegmenedControlExt.swift in Sources */,
+				52B7771224A99114007337E6 /* WaitingChatsCell.swift in Sources */,
 				529B2D09249548D100C0CD94 /* TextFieldFormView.swift in Sources */,
 				5218FC482493B5E500E20955 /* UIFontExt.swift in Sources */,
 			);
