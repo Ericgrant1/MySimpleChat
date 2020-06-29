@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class WaitingChatsCell: UICollectionViewCell {
+class WaitingChatsCell: UICollectionViewCell, ConfigureCell {
     
     // MARK: - Properties
     

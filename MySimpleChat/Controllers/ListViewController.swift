@@ -30,14 +30,12 @@ struct MyChat: Hashable, Decodable {
     }
 }
 
-private var reuseIdentifierSecond = "ListCell2"
-
 class ListViewController: UIViewController {
     
     // MARK: - Properties
     
-    let activeChats = Bundle.main.decode([MyChat].self, from: "activeChats.json")
     let waitingChats = Bundle.main.decode([MyChat].self, from: "waitingChats.json")
+    let activeChats = Bundle.main.decode([MyChat].self, from: "activeChats.json")
     
     var collectionView: UICollectionView!
     var dataSource: UICollectionViewDiffableDataSource<Section, MyChat>?
@@ -72,8 +70,8 @@ class ListViewController: UIViewController {
         collectionView.backgroundColor = .mainWhite()
         view.addSubview(collectionView)
         
+        collectionView.register(WaitingChatsCell.self, forCellWithReuseIdentifier: WaitingChatsCell.reuseId)
         collectionView.register(ActiveChatsCell.self, forCellWithReuseIdentifier: ActiveChatsCell.reuseId)
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifierSecond)
     }
     
     private func reloadData() {
@@ -105,12 +103,10 @@ extension ListViewController {
             }
             
             switch secttion {
+            case .waitingChats:
+                return self.configure(cellType: WaitingChatsCell.self, with: chat, for: indexPath)
             case .activeChats:
                 return self.configure(cellType: ActiveChatsCell.self, with: chat, for: indexPath)
-            case .waitingChats:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifierSecond, for: indexPath)
-                cell.backgroundColor = .systemRed
-                return cell
             }
         })
     }
