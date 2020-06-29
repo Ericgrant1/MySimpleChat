@@ -24,6 +24,10 @@ class WaitingChatsCell: UICollectionViewCell, ConfigureCell {
         super.init(frame: frame)
         
         backgroundColor = .yellow
+        self.layer.cornerRadius = 4
+        self.clipsToBounds = true
+        
+        configureUI()
     }
     
     required init?(coder: NSCoder) {
@@ -33,7 +37,20 @@ class WaitingChatsCell: UICollectionViewCell, ConfigureCell {
     // MARK: - Helpers
     
     func configure(with value: MyChat) {
+        friendImageView.image = UIImage(named: value.userImageString)
+    }
+    
+    func configureUI() {
         
+        friendImageView.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(friendImageView)
+        
+        NSLayoutConstraint.activate([
+            friendImageView.topAnchor.constraint(equalTo: self.topAnchor),
+            friendImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            friendImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            friendImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+        ])
     }
 }
 
