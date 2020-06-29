@@ -8,12 +8,15 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 
 class WaitingChatsCell: UICollectionViewCell, ConfigureCell {
     
     // MARK: - Properties
     
     static var reuseId: String = "WaitingChatsCell"
+    
+    let friendImageView = UIImageView()
     
     // MARK: - Lifecycle
     
@@ -31,5 +34,26 @@ class WaitingChatsCell: UICollectionViewCell, ConfigureCell {
     
     func configure(with value: MyChat) {
         
+    }
+}
+
+// MARK: - SwiftUI
+
+struct WaitingChatsProvider: PreviewProvider {
+    
+    static var previews: some View {
+        ContainerView().edgesIgnoringSafeArea(.all)
+    }
+    
+    struct ContainerView: UIViewControllerRepresentable {
+        
+        let tabBarVC = MainTabBarController()
+        
+        func makeUIViewController(context: Context) -> MainTabBarController {
+            return tabBarVC
+        }
+        
+        func updateUIViewController(_ uiViewController: MainTabBarController, context: Context) {
+        }
     }
 }
