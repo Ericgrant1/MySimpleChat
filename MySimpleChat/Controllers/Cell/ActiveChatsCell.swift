@@ -10,11 +10,6 @@ import Foundation
 import UIKit
 import SwiftUI
 
-protocol ConfigureCell {
-    static var reuseId: String { get }
-    func configure(with value: MyChat)
-}
-
 class ActiveChatsCell: UICollectionViewCell, ConfigureCell {
     
     // MARK: - Properties
