@@ -26,6 +26,7 @@
 		52B7771024A870CD007337E6 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B7770F24A870CD007337E6 /* GradientView.swift */; };
 		52B7771224A99114007337E6 /* WaitingChatsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B7771124A99114007337E6 /* WaitingChatsCell.swift */; };
 		52B7771424A9989F007337E6 /* ConfigureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B7771324A9989F007337E6 /* ConfigureCell.swift */; };
+		52B7771724AB987D007337E6 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B7771624AB987D007337E6 /* SectionHeader.swift */; };
 		52C98A9424A357B50095571C /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C98A9324A357B50095571C /* ListViewController.swift */; };
 		52C98A9824A369980095571C /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C98A9724A369980095571C /* ContactsViewController.swift */; };
 		52C98A9A24A36AC90095571C /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C98A9924A36AC90095571C /* MainTabBarController.swift */; };
@@ -57,6 +58,7 @@
 		52B7770F24A870CD007337E6 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		52B7771124A99114007337E6 /* WaitingChatsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingChatsCell.swift; sourceTree = "<group>"; };
 		52B7771324A9989F007337E6 /* ConfigureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureCell.swift; sourceTree = "<group>"; };
+		52B7771624AB987D007337E6 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		52C98A9324A357B50095571C /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		52C98A9724A369980095571C /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		52C98A9924A36AC90095571C /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				52C98A9924A36AC90095571C /* MainTabBarController.swift */,
 				52C98A9724A369980095571C /* ContactsViewController.swift */,
 				52C98A9324A357B50095571C /* ListViewController.swift */,
+				52B7771624AB987D007337E6 /* SectionHeader.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 			files = (
 				52C98A9424A357B50095571C /* ListViewController.swift in Sources */,
 				52D6CBDF24933FDC00C89474 /* AuthViewController.swift in Sources */,
+				52B7771724AB987D007337E6 /* SectionHeader.swift in Sources */,
 				52B7771024A870CD007337E6 /* GradientView.swift in Sources */,
 				5218FC4A2493B84500E20955 /* UIColorExt.swift in Sources */,
 				52D6CBDB24933FDC00C89474 /* AppDelegate.swift in Sources */,
