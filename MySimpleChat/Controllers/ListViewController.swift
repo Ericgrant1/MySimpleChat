@@ -149,6 +149,10 @@ extension ListViewController {
                                                              bottom: 0,
                                                              trailing: 20)
         section.orthogonalScrollingBehavior = .continuous
+        
+        let sectionHeader = setupSectionHeader()
+        section.boundarySupplementaryItems = [sectionHeader]
+        
         return section
     }
     
@@ -167,7 +171,19 @@ extension ListViewController {
                                                              leading: 20,
                                                              bottom: 0,
                                                              trailing: 20)
+        
+        let sectionHeader = setupSectionHeader()
+        section.boundarySupplementaryItems = [sectionHeader]
+        
         return section
+    }
+    
+    private func setupSectionHeader() -> NSCollectionLayoutBoundarySupplementaryItem {
+        
+        let sectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: sectionHeaderSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
+        
+        return sectionHeader
     }
 }
 
