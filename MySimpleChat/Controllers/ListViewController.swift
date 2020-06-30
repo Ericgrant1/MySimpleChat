@@ -13,6 +13,15 @@ import SwiftUI
 enum Section: Int, CaseIterable {
     case waitingChats
     case activeChats
+    
+    func description() -> String {
+        switch self {
+        case .waitingChats:
+            return "Waiting Chats"
+        case .activeChats:
+            return "Active Chats"
+        }
+    }
 }
 
 struct MyChat: Hashable, Decodable {
@@ -111,6 +120,17 @@ extension ListViewController {
                 return self.configure(cellType: ActiveChatsCell.self, with: chat, for: indexPath)
             }
         })
+        
+        dataSource?.supplementaryViewProvider = {
+            collectionView, kind, indexPath in
+            guard let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: SectionHeader.reuseId, for: indexPath) as? SectionHeader else { fatalError("Can't create new section header") }
+            guard let section = Section(rawValue: indexPath.section) else { fatalError("Unknown section kind") }
+            sectionHeader.configure(text: section.description(),
+                                    font: .laoSangamMN20(),
+                                    textColor: .sectionHeaderColor())
+            
+            return sectionHeader
+        }
     }
 }
 
