@@ -12,6 +12,12 @@ import SwiftUI
 
 class ContactsViewController: UIViewController {
     
+    // MARK: - Properties
+    
+    let users = Bundle.main.decode([MyChat].self, from: "activeChats.json")
+    
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
