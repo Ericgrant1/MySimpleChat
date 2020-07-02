@@ -15,6 +15,12 @@ class ContactsViewController: UIViewController {
     // MARK: - Properties
     
     let users = Bundle.main.decode([ModelUser].self, from: "users.json")
+    var collectionView: UICollectionView! = nil
+    var dataSource: UICollectionViewDiffableDataSource<Section, ModelUser>!
+    
+    enum Section: Int, CaseIterable {
+        case users
+    }
     
     // MARK: - Lifecycle
     
@@ -23,10 +29,6 @@ class ContactsViewController: UIViewController {
         
         view.backgroundColor = .white
         setupSearchBar()
-        
-        users.forEach { (user) in
-            print(user.username)
-        }
     }
     
     // MARK: - Helpers
@@ -40,6 +42,31 @@ class ContactsViewController: UIViewController {
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.delegate = self
+    }
+    
+    private func reloadData() {
+        var snapshot = NSDiffableDataSourceSnapshot<Section, ModelUser>()
+        snapshot.appendSections([.users])
+        snapshot.appendItems(users, toSection: .users)
+        
+        dataSource?.apply(snapshot, animatingDifferences: true)
+    }
+}
+
+extension ContactsViewController {
+    private func createDataSource() {
+        dataSource = UICollectionViewDiffableDataSource<Section, ModelUser>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, user) -> UICollectionViewCell? in
+            guard let section = Section(rawValue: indexPath.section) else {
+                fatalError("Unknown section kind")
+            }
+            
+            switch section {
+            case .users:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath)
+                cell.backgroundColor = .systemBlue
+                return cell
+            }
+        })
     }
 }
 
