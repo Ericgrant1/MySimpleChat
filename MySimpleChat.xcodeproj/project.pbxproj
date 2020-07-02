@@ -145,6 +145,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		52B7771F24AE6B41007337E6 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				52B7771624AB987D007337E6 /* SectionHeader.swift */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
 		52C98A9524A366B30095571C /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,8 +171,8 @@
 				52C98A9524A366B30095571C /* Authentication */,
 				52C98A9924A36AC90095571C /* MainTabBarController.swift */,
 				52C98A9324A357B50095571C /* ListViewController.swift */,
-				52B7771624AB987D007337E6 /* SectionHeader.swift */,
 				52C98A9724A369980095571C /* ContactsViewController.swift */,
+				52B7771F24AE6B41007337E6 /* Header */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";

@@ -16,10 +16,16 @@ class ContactsViewController: UIViewController {
     
     let users = Bundle.main.decode([ModelUser].self, from: "users.json")
     var collectionView: UICollectionView! = nil
-    var dataSource: UICollectionViewDiffableDataSource<Section, ModelUser>?
+    var dataSource: UICollectionViewDiffableDataSource<Section, ModelUser>!
     
     enum Section: Int, CaseIterable {
         case users
+        func description(usersCount: Int) -> String {
+            switch self {
+            case .users:
+                return "\(usersCount) people nearby"
+            }
+        }
     }
     
     // MARK: - Lifecycle
@@ -83,6 +89,18 @@ extension ContactsViewController {
                 return cell
             }
         })
+        
+        dataSource?.supplementaryViewProvider = {
+            collectionView, kind, indexPath in
+            guard let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: SectionHeader.reuseId, for: indexPath) as? SectionHeader else { fatalError("Can't create new section header") }
+            guard let section = Section(rawValue: indexPath.section) else { fatalError("Unknown section kind") }
+            
+            let items = self.dataSource.snapshot().itemIdentifiers(inSection: .users)
+            sectionHeader.configure(text: section.description(usersCount: items.count),
+                                    font: .systemFont(ofSize: 35, weight: .light),
+                                    textColor: .label)
+            return sectionHeader
+        }
     }
 }
 
@@ -125,7 +143,19 @@ extension ContactsViewController {
                                                              leading: 16,
                                                              bottom: 0,
                                                              trailing: 16)
+        
+        let sectionHeader = setupSectionHeader()
+        section.boundarySupplementaryItems = [sectionHeader]
+        
         return section
+    }
+    
+    private func setupSectionHeader() -> NSCollectionLayoutBoundarySupplementaryItem {
+        
+        let sectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(1))
+        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: sectionHeaderSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
+        
+        return sectionHeader
     }
 }
 
