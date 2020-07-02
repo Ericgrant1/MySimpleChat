@@ -14,7 +14,7 @@ class ContactsViewController: UIViewController {
     
     // MARK: - Properties
     
-    let users = Bundle.main.decode([MyChat].self, from: "activeChats.json")
+    let users = Bundle.main.decode([ModelUser].self, from: "users.json")
     
     // MARK: - Lifecycle
     
@@ -23,6 +23,10 @@ class ContactsViewController: UIViewController {
         
         view.backgroundColor = .white
         setupSearchBar()
+        
+        users.forEach { (user) in
+            print(user.username)
+        }
     }
     
     // MARK: - Helpers
