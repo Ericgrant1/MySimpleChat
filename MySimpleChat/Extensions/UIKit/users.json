@@ -1,0 +1,52 @@
+[
+    {
+        "username": "Ryan Gosling",
+        "avatarStringURL": "human1",
+        "id": 1
+    },
+    {
+        "username": "Hugh Jackman",
+        "avatarStringURL": "human2",
+        "id": 2
+    },
+    {
+        "username": "Chris Hemsworth",
+        "avatarStringURL": "human3",
+        "id": 3
+    },
+    {
+        "username": "Zara Larsson",
+        "avatarStringURL": "human4",
+        "id": 4
+    },
+    {
+        "username": "Robert Downey",
+        "avatarStringURL": "human5",
+        "id": 5
+    },
+    {
+        "username": "James Mcavoy",
+        "avatarStringURL": "human6",
+        "id": 6
+    },
+    {
+        "username": "Sabrina Carpenter",
+        "avatarStringURL": "human7",
+        "id": 7
+    },
+    {
+        "username": "Keanu Reeves",
+        "avatarStringURL": "human8",
+        "id": 8
+    },
+    {
+        "username": "Chris Evans",
+        "avatarStringURL": "human9",
+        "id": 9
+    },
+    {
+        "username": "Julianne Hough",
+        "avatarStringURL": "human10",
+        "id": 10
+    }
+]
