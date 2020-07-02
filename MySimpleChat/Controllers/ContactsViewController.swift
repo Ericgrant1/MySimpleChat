@@ -16,7 +16,7 @@ class ContactsViewController: UIViewController {
     
     let users = Bundle.main.decode([ModelUser].self, from: "users.json")
     var collectionView: UICollectionView! = nil
-    var dataSource: UICollectionViewDiffableDataSource<Section, ModelUser>!
+    var dataSource: UICollectionViewDiffableDataSource<Section, ModelUser>?
     
     enum Section: Int, CaseIterable {
         case users
@@ -29,6 +29,9 @@ class ContactsViewController: UIViewController {
         
         view.backgroundColor = .white
         setupSearchBar()
+        configureCollectionView()
+        createDataSource()
+        reloadData()
     }
     
     // MARK: - Helpers
@@ -44,6 +47,17 @@ class ContactsViewController: UIViewController {
         searchController.searchBar.delegate = self
     }
     
+    private func configureCollectionView() {
+        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createCellCompositionLayout())
+        collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        collectionView.backgroundColor = .mainWhite()
+        view.addSubview(collectionView)
+        
+        collectionView.register(SectionHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SectionHeader.reuseId)
+        
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellId")
+    }
+
     private func reloadData() {
         var snapshot = NSDiffableDataSourceSnapshot<Section, ModelUser>()
         snapshot.appendSections([.users])
@@ -52,6 +66,8 @@ class ContactsViewController: UIViewController {
         dataSource?.apply(snapshot, animatingDifferences: true)
     }
 }
+
+// MARK: - Data Source
 
 extension ContactsViewController {
     private func createDataSource() {
@@ -67,6 +83,49 @@ extension ContactsViewController {
                 return cell
             }
         })
+    }
+}
+
+// MARK: - Configure Layout
+
+extension ContactsViewController {
+    private func createCellCompositionLayout() -> UICollectionViewLayout {
+        let layout = UICollectionViewCompositionalLayout { (sectionIndex, layoutEnviroment) -> NSCollectionLayoutSection? in
+            guard let section = Section(rawValue: sectionIndex) else { fatalError("Unknown section kind")
+            }
+            switch section {
+            case .users:
+                return self.createUsersSection()
+            }
+        }
+
+        let config = UICollectionViewCompositionalLayoutConfiguration()
+        config.interSectionSpacing = 20
+        layout.configuration = config
+        return layout
+    }
+
+    private func createUsersSection() -> NSCollectionLayoutSection {
+        
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+                                              heightDimension: .fractionalHeight(1))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                               heightDimension: .fractionalWidth(0.6))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
+                                                       subitem: item,
+                                                       count: 2)
+        let spacing = CGFloat(16)
+        group.interItemSpacing = .fixed(spacing)
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.interGroupSpacing = spacing
+        section.contentInsets = NSDirectionalEdgeInsets.init(top: 16,
+                                                             leading: 16,
+                                                             bottom: 0,
+                                                             trailing: 16)
+        return section
     }
 }
 
