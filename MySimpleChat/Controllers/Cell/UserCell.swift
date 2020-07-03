@@ -26,7 +26,6 @@ class UserCell: UICollectionViewCell, ConfigureCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = .green
         configureUI()
     }
     
@@ -36,12 +35,16 @@ class UserCell: UICollectionViewCell, ConfigureCell {
     
     // MARK: - Helpers
     
+    func configure<U>(with value: U) where U : Hashable {
+        guard let user: ModelUser = value as? ModelUser else { return }
+        userImageView.image = UIImage(named: user.avatarImageString)
+        userName.text = user.username
+    }
+    
     private func configureUI() {
         userImageView.translatesAutoresizingMaskIntoConstraints = false
         userName.translatesAutoresizingMaskIntoConstraints = false
         containerView.translatesAutoresizingMaskIntoConstraints = false
-        
-        userImageView.backgroundColor = .orange
         
         addSubview(containerView)
         containerView.addSubview(userImageView)
@@ -67,11 +70,6 @@ class UserCell: UICollectionViewCell, ConfigureCell {
             userName.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -8),
             userName.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
         ])
-        
-    }
-    
-    func configure<U>(with value: U) where U : Hashable {
-        print(123)
     }
 }
 
