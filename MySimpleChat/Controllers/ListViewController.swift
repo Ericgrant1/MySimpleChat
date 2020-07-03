@@ -87,12 +87,6 @@ class ListViewController: UIViewController {
 
 extension ListViewController {
     
-    private func configure<T: ConfigureCell, U: Hashable>(cellType: T.Type, with value: U, for indexPath: IndexPath) -> T {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellType.reuseId, for: indexPath) as? T else { fatalError("Unable to dequeue \(cellType)")}
-        cell.configure(with: value)
-        return cell
-    }
-    
     private func setupDataSource() {
         dataSource = UICollectionViewDiffableDataSource<Section, MyChat>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, chat) -> UICollectionViewCell? in
             guard let secttion = Section(rawValue: indexPath.section) else { fatalError("Unknown section kind")
@@ -100,9 +94,9 @@ extension ListViewController {
             
             switch secttion {
             case .waitingChats:
-                return self.configure(cellType: WaitingChatsCell.self, with: chat, for: indexPath)
+                return self.configure(collectionView: collectionView, cellType: WaitingChatsCell.self, with: chat, for: indexPath)
             case .activeChats:
-                return self.configure(cellType: ActiveChatsCell.self, with: chat, for: indexPath)
+                return self.configure(collectionView: collectionView, cellType: ActiveChatsCell.self, with: chat, for: indexPath)
             }
         })
         
