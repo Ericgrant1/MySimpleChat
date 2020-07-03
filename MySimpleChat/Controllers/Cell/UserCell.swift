@@ -26,7 +26,21 @@ class UserCell: UICollectionViewCell, ConfigureCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        backgroundColor = .white
         configureUI()
+        
+        self.layer.cornerRadius = 4
+        
+        self.layer.shadowColor = #colorLiteral(red: 0.7411764706, green: 0.7411764706, blue: 0.7411764706, alpha: 1)
+        self.layer.shadowRadius = 4
+        self.layer.shadowOpacity = 0.6
+        self.layer.shadowOffset = CGSize(width: 0, height: 4)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.containerView.layer.cornerRadius = 4
+        self.containerView.clipsToBounds = true
     }
     
     required init?(coder: NSCoder) {
