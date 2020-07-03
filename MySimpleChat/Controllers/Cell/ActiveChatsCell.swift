@@ -11,6 +11,10 @@ import UIKit
 import SwiftUI
 
 class ActiveChatsCell: UICollectionViewCell, ConfigureCell {
+    func configure<U>(with value: U) where U : Hashable {
+        print(123)
+    }
+    
     
     // MARK: - Properties
     
