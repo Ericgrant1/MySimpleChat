@@ -10,5 +10,5 @@ import Foundation
 
 protocol ConfigureCell {
     static var reuseId: String { get }
-    func configure(with value: MyChat)
+    func configure<U: Hashable>(with value: U)
 }

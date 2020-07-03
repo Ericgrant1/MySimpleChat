@@ -87,7 +87,7 @@ class ListViewController: UIViewController {
 
 extension ListViewController {
     
-    private func configure<T: ConfigureCell>(cellType: T.Type, with value: MyChat, for indexPath: IndexPath) -> T {
+    private func configure<T: ConfigureCell, U: Hashable>(cellType: T.Type, with value: U, for indexPath: IndexPath) -> T {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellType.reuseId, for: indexPath) as? T else { fatalError("Unable to dequeue \(cellType)")}
         cell.configure(with: value)
         return cell
