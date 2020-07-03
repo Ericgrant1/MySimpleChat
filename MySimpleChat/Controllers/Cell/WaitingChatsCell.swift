@@ -11,10 +11,6 @@ import UIKit
 import SwiftUI
 
 class WaitingChatsCell: UICollectionViewCell, ConfigureCell {
-    func configure<U>(with value: U) where U : Hashable {
-        print(123)
-    }
-    
     
     // MARK: - Properties
     
@@ -40,8 +36,10 @@ class WaitingChatsCell: UICollectionViewCell, ConfigureCell {
     
     // MARK: - Helpers
     
-    func configure(with value: MyChat) {
-        friendImageView.image = UIImage(named: value.userImageString)
+    func configure<U>(with value: U) where U : Hashable {
+        guard let chat: MyChat = value as? MyChat else { return }
+        friendImageView.image = UIImage(named: chat.userImageString)
+        
     }
     
     func configureUI() {

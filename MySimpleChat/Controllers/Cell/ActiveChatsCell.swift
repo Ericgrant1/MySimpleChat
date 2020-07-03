@@ -11,9 +11,6 @@ import UIKit
 import SwiftUI
 
 class ActiveChatsCell: UICollectionViewCell, ConfigureCell {
-    func configure<U>(with value: U) where U : Hashable {
-        print(123)
-    }
     
     
     // MARK: - Properties
@@ -43,10 +40,11 @@ class ActiveChatsCell: UICollectionViewCell, ConfigureCell {
     
     // MARK: - Helpers
     
-    func configure(with value: MyChat) {
-        friendImageView.image = UIImage(named: value.userImageString)
-        friendName.text = value.username
-        lastMessage.text = value.lastMessage
+    func configure<U>(with value: U) where U : Hashable {
+        guard let chat: MyChat = value as? MyChat else { return }
+        friendImageView.image = UIImage(named: chat.userImageString)
+        friendName.text = chat.username
+        lastMessage.text = chat.lastMessage
     }
 }
 
