@@ -37,7 +37,7 @@ class ContactsViewController: UIViewController {
         setupSearchBar()
         configureCollectionView()
         createDataSource()
-        reloadData()
+        reloadData(with: nil)
     }
     
     // MARK: - Helpers
@@ -64,10 +64,14 @@ class ContactsViewController: UIViewController {
         collectionView.register(UserCell.self, forCellWithReuseIdentifier: UserCell.reuseId)
     }
 
-    private func reloadData() {
+    private func reloadData(with searchText: String?) {
+        let filtered = users.filter { (user) -> Bool in
+            user.contains(filter: searchText)
+        }
+        
         var snapshot = NSDiffableDataSourceSnapshot<Section, ModelUser>()
         snapshot.appendSections([.users])
-        snapshot.appendItems(users, toSection: .users)
+        snapshot.appendItems(filtered, toSection: .users)
         
         dataSource?.apply(snapshot, animatingDifferences: true)
     }
@@ -162,7 +166,7 @@ extension ContactsViewController {
 extension ContactsViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print(searchText)
+        reloadData(with: searchText)
     }
 }
 
