@@ -43,8 +43,6 @@ class ProfileViewController: UIViewController {
         
         containerView.backgroundColor = .mainWhite()
         containerView.layer.cornerRadius = 28
-        
-        userTextField.borderStyle = .roundedRect
     }
 }
 
