@@ -18,7 +18,7 @@ class ProfileViewController: UIViewController {
     let imageView = UIImageView(image: #imageLiteral(resourceName: "human3"), contentMode: .scaleAspectFill)
     let nameLabel = UILabel(text: "Aron Freedman", font: .systemFont(ofSize: 21, weight: .light), textColor: .black)
     let aboutMeLabel = UILabel(text: "You have the opportunity to chat with the best man in the World!", font: .systemFont(ofSize: 15, weight: .light), textColor: .black)
-    let userTextField = UITextField()
+    let userTextField = InsertedTextField()
     
     // MARK: - Lifecycle
     
