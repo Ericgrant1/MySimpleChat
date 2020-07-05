@@ -32,6 +32,7 @@
 		52B7771D24AE23C2007337E6 /* MyChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B7771C24AE23C2007337E6 /* MyChat.swift */; };
 		52B7772124AF9531007337E6 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B7772024AF9531007337E6 /* UserCell.swift */; };
 		52B7772324AF99ED007337E6 /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B7772224AF99ED007337E6 /* UIViewControllerExt.swift */; };
+		52B7772524B1E9ED007337E6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B7772424B1E9ED007337E6 /* ProfileViewController.swift */; };
 		52C98A9424A357B50095571C /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C98A9324A357B50095571C /* ListViewController.swift */; };
 		52C98A9824A369980095571C /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C98A9724A369980095571C /* ContactsViewController.swift */; };
 		52C98A9A24A36AC90095571C /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C98A9924A36AC90095571C /* MainTabBarController.swift */; };
@@ -69,6 +70,7 @@
 		52B7771C24AE23C2007337E6 /* MyChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChat.swift; sourceTree = "<group>"; };
 		52B7772024AF9531007337E6 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		52B7772224AF99ED007337E6 /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
+		52B7772424B1E9ED007337E6 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		52C98A9324A357B50095571C /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		52C98A9724A369980095571C /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		52C98A9924A36AC90095571C /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				52C98A9924A36AC90095571C /* MainTabBarController.swift */,
 				52C98A9324A357B50095571C /* ListViewController.swift */,
 				52C98A9724A369980095571C /* ContactsViewController.swift */,
+				52B7772424B1E9ED007337E6 /* ProfileViewController.swift */,
 				52B7771F24AE6B41007337E6 /* Header */,
 			);
 			path = Controllers;
@@ -300,6 +303,7 @@
 				529B2D0B24962B2800C0CD94 /* LoginController.swift in Sources */,
 				529B2D052495000600C0CD94 /* UISTackViewExt.swift in Sources */,
 				529B2D032494E6A200C0CD94 /* ButtonFormView.swift in Sources */,
+				52B7772524B1E9ED007337E6 /* ProfileViewController.swift in Sources */,
 				526D52F524A5FAB500DB6E71 /* BundleDecodable.swift in Sources */,
 				52D6CBDD24933FDC00C89474 /* SceneDelegate.swift in Sources */,
 				529B2D0D2496808400C0CD94 /* ProfileController.swift in Sources */,
