@@ -33,6 +33,8 @@ class InsertedTextField: UITextField {
         
         let button = UIButton(type: .system)
         button.setImage(UIImage(named: "Sent"), for: .normal)
+        button.applyGradient(cornerRadius: 10)
+        
         rightView = button
         rightView?.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
         rightViewMode = .always
