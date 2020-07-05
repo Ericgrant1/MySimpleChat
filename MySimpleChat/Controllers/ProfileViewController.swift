@@ -30,6 +30,12 @@ class ProfileViewController: UIViewController {
         configureUI()
     }
     
+    // MARK: - Selectors
+    
+    @objc private func handleSendMessage() {
+        print(#function)
+    }
+    
     // MARK: - Helpers
     
     private func customizeElements() {
@@ -43,6 +49,10 @@ class ProfileViewController: UIViewController {
         
         containerView.backgroundColor = .mainWhite()
         containerView.layer.cornerRadius = 28
+        
+        if let button = userTextField.rightView as? UIButton {
+            button.addTarget(self, action: #selector(handleSendMessage), for: .touchUpInside)
+        }
     }
 }
 
