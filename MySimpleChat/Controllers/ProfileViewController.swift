@@ -43,6 +43,8 @@ class ProfileViewController: UIViewController {
         
         containerView.backgroundColor = .mainWhite()
         containerView.layer.cornerRadius = 28
+        
+        userTextField.borderStyle = .roundedRect
     }
 }
 
@@ -51,7 +53,44 @@ class ProfileViewController: UIViewController {
 extension ProfileViewController {
     
     private func configureUI() {
+        view.addSubview(imageView)
+        view.addSubview(containerView)
+        containerView.addSubview(nameLabel)
+        containerView.addSubview(aboutMeLabel)
+        containerView.addSubview(userTextField)
         
+        NSLayoutConstraint.activate([
+            imageView.topAnchor.constraint(equalTo: view.topAnchor),
+            imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            imageView.bottomAnchor.constraint(equalTo: containerView.topAnchor, constant: 40)
+        ])
+        
+        NSLayoutConstraint.activate([
+            containerView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            containerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            containerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            containerView.heightAnchor.constraint(equalToConstant: 210)
+        ])
+        
+        NSLayoutConstraint.activate([
+            nameLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 35),
+            nameLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 24),
+            nameLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -24),
+        ])
+        
+        NSLayoutConstraint.activate([
+            aboutMeLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 8),
+            aboutMeLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 24),
+            aboutMeLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -24),
+        ])
+        
+        NSLayoutConstraint.activate([
+            userTextField.topAnchor.constraint(equalTo: aboutMeLabel.bottomAnchor, constant: 8),
+            userTextField.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 24),
+            userTextField.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -24),
+            userTextField.heightAnchor.constraint(equalToConstant: 50)
+        ])
     }
 }
 
