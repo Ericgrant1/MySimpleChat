@@ -27,6 +27,8 @@ class InsertedTextField: UITextField {
         
         let image = UIImage(systemName: "smiley")
         let imageView = UIImageView(image: image)
+        imageView.configureColor(color: .lightGray)
+        
         leftView = imageView
         leftView?.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
         leftViewMode = .always
