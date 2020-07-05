@@ -12,8 +12,30 @@ import SwiftUI
 
 class InsertedTextField: UITextField {
     
+    // MARK: - Lifecycle
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        backgroundColor = .white
+        placeholder = "Write something here..."
+        font = UIFont.systemFont(ofSize: 14)
+        clearButtonMode = .whileEditing
+        borderStyle = .none
+        layer.cornerRadius = 18
+        layer.masksToBounds = true
+        
+        let image = UIImage(systemName: "smiley")
+        let imageView = UIImageView(image: image)
+        leftView = imageView
+        leftView?.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
+        leftViewMode = .always
+        
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(named: "Sent"), for: .normal)
+        rightView = button
+        rightView?.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
+        rightViewMode = .always
     }
     
     required init?(coder: NSCoder) {
