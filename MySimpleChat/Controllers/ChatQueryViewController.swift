@@ -41,6 +41,11 @@ class ChatQueryViewController: UIViewController {
         configureUI()
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        self.acceptButton.applyGradient(cornerRadius: 10)
+    }
+    
     // MARK: - Helpers
     
     private func customizeElements() {
@@ -54,6 +59,8 @@ class ChatQueryViewController: UIViewController {
         
         containerView.backgroundColor = .mainWhite()
         containerView.layer.cornerRadius = 28
+        
+        acceptButton.applyGradient(cornerRadius: 10)
     }
 }
 
