@@ -33,6 +33,9 @@ class AuthViewController: UIViewController {
                                backgroundColor: .white,
                                isShadow: true)
     
+    let signUpVC = SignUpController()
+    let loginVC = LoginController()
+    
     
     // MARK: - Lifecycle
     
@@ -51,10 +54,12 @@ class AuthViewController: UIViewController {
     
     @objc private func handleEmailTapped() {
         print(#function)
+        present(signUpVC, animated: true, completion: nil)
     }
     
     @objc private func handleAuthLoginTapped() {
         print(#function)
+        present(loginVC, animated: true, completion: nil)
     }
     
     // MARK: - Hepler functions
