@@ -55,6 +55,14 @@ class LoginController: UIViewController {
     
     @objc private func handleLoginTapped() {
         print(#function)
+        AuthService.shared.login(email: emailTextField.text, password: passwordTextField.text) { (result) in
+            switch result {
+            case .success(let user):
+                self.showAlert(with: "Successfully!", and: "You're authorized!")
+            case .failure(let error):
+                self.showAlert(with: "Error!", and: error.localizedDescription)
+            }
+        }
     }
 }
 
