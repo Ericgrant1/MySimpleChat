@@ -47,6 +47,14 @@ class LoginController: UIViewController {
         view.backgroundColor = #colorLiteral(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)
         googleButton.customizedGoogleButton()
         configureUI()
+        
+        loginButton.addTarget(self, action: #selector(handleLoginTapped), for: .touchUpInside)
+    }
+    
+    // MARK: - Selectors
+    
+    @objc private func handleLoginTapped() {
+        print(#function)
     }
 }
 

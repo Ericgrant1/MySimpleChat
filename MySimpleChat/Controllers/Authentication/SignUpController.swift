@@ -44,10 +44,15 @@ class SignUpController: UIViewController {
         view.backgroundColor = #colorLiteral(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)
         
         configureUI()
+        
+        signUpButton.addTarget(self, action: #selector(handleSignupTapped), for: .touchUpInside)
     }
     
-    // MARK: - Helper functions
+    // MARK: - Selectors
     
+    @objc private func handleSignupTapped() {
+        print(#function)
+    }
 }
 
 // MARK: - Setup constraints

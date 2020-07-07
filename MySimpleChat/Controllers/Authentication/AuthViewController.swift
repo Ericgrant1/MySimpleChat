@@ -42,6 +42,19 @@ class AuthViewController: UIViewController {
         view.backgroundColor = #colorLiteral(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)
         googleButton.customizedGoogleButton()
         configureUI()
+        
+        emailButton.addTarget(self, action: #selector(handleEmailTapped), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(handleAuthLoginTapped), for: .touchUpInside)
+    }
+    
+    // MARK: - Selectors
+    
+    @objc private func handleEmailTapped() {
+        print(#function)
+    }
+    
+    @objc private func handleAuthLoginTapped() {
+        print(#function)
     }
     
     // MARK: - Hepler functions
