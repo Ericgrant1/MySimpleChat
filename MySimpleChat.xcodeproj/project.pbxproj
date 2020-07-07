@@ -23,6 +23,7 @@
 		529B2D0D2496808400C0CD94 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529B2D0C2496808400C0CD94 /* ProfileController.swift */; };
 		529B2D0F24968DD700C0CD94 /* ProfilePhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529B2D0E24968DD700C0CD94 /* ProfilePhotoView.swift */; };
 		529B2D11249753BE00C0CD94 /* UISegmenedControlExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529B2D10249753BE00C0CD94 /* UISegmenedControlExt.swift */; };
+		52A9F32B24B481BA00D8C4CE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52A9F32A24B481B900D8C4CE /* GoogleService-Info.plist */; };
 		52B7771024A870CD007337E6 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B7770F24A870CD007337E6 /* GradientView.swift */; };
 		52B7771224A99114007337E6 /* WaitingChatsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B7771124A99114007337E6 /* WaitingChatsCell.swift */; };
 		52B7771424A9989F007337E6 /* ConfigureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B7771324A9989F007337E6 /* ConfigureCell.swift */; };
@@ -45,9 +46,11 @@
 		52D6CBE424933FDD00C89474 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52D6CBE324933FDD00C89474 /* Assets.xcassets */; };
 		52D6CBE724933FDD00C89474 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52D6CBE524933FDD00C89474 /* LaunchScreen.storyboard */; };
 		52D6CBFD2493AFE700C89474 /* UIButtonExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D6CBFC2493AFE700C89474 /* UIButtonExt.swift */; };
+		E3E530A0EF470BBA84CAED2A /* Pods_MySimpleChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 995CA0384FF21F29D3EFC7FB /* Pods_MySimpleChat.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D477C7D755379527A3114AC /* Pods-MySimpleChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySimpleChat.debug.xcconfig"; path = "Target Support Files/Pods-MySimpleChat/Pods-MySimpleChat.debug.xcconfig"; sourceTree = "<group>"; };
 		520DCAFD24A786560085D4FC /* ActiveChatsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveChatsCell.swift; sourceTree = "<group>"; };
 		5218FC472493B5E500E20955 /* UIFontExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExt.swift; sourceTree = "<group>"; };
 		5218FC492493B84500E20955 /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
@@ -64,6 +67,7 @@
 		529B2D0C2496808400C0CD94 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		529B2D0E24968DD700C0CD94 /* ProfilePhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePhotoView.swift; sourceTree = "<group>"; };
 		529B2D10249753BE00C0CD94 /* UISegmenedControlExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISegmenedControlExt.swift; sourceTree = "<group>"; };
+		52A9F32A24B481B900D8C4CE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		52B7770F24A870CD007337E6 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		52B7771124A99114007337E6 /* WaitingChatsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingChatsCell.swift; sourceTree = "<group>"; };
 		52B7771324A9989F007337E6 /* ConfigureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureCell.swift; sourceTree = "<group>"; };
@@ -88,6 +92,8 @@
 		52D6CBE624933FDD00C89474 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52D6CBE824933FDD00C89474 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52D6CBFC2493AFE700C89474 /* UIButtonExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExt.swift; sourceTree = "<group>"; };
+		56C1E53CA4BC047E37B8440E /* Pods-MySimpleChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySimpleChat.release.xcconfig"; path = "Target Support Files/Pods-MySimpleChat/Pods-MySimpleChat.release.xcconfig"; sourceTree = "<group>"; };
+		995CA0384FF21F29D3EFC7FB /* Pods_MySimpleChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MySimpleChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,12 +101,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3E530A0EF470BBA84CAED2A /* Pods_MySimpleChat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		22584FB9F621EA85D9B1E5ED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				995CA0384FF21F29D3EFC7FB /* Pods_MySimpleChat.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		520DCAFC24A7860C0085D4FC /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +215,8 @@
 			children = (
 				52D6CBD924933FDC00C89474 /* MySimpleChat */,
 				52D6CBD824933FDC00C89474 /* Products */,
+				E4BDCC0A2DA70C7CACF757D9 /* Pods */,
+				22584FB9F621EA85D9B1E5ED /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -223,8 +240,19 @@
 				52D6CBE324933FDD00C89474 /* Assets.xcassets */,
 				52D6CBE524933FDD00C89474 /* LaunchScreen.storyboard */,
 				52D6CBE824933FDD00C89474 /* Info.plist */,
+				52A9F32A24B481B900D8C4CE /* GoogleService-Info.plist */,
 			);
 			path = MySimpleChat;
+			sourceTree = "<group>";
+		};
+		E4BDCC0A2DA70C7CACF757D9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4D477C7D755379527A3114AC /* Pods-MySimpleChat.debug.xcconfig */,
+				56C1E53CA4BC047E37B8440E /* Pods-MySimpleChat.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,9 +262,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52D6CBEB24933FDD00C89474 /* Build configuration list for PBXNativeTarget "MySimpleChat" */;
 			buildPhases = (
+				92EECF76491F0BFB7273D856 /* [CP] Check Pods Manifest.lock */,
 				52D6CBD324933FDC00C89474 /* Sources */,
 				52D6CBD424933FDC00C89474 /* Frameworks */,
 				52D6CBD524933FDC00C89474 /* Resources */,
+				9AB6167AA7C441F8A5565468 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -290,10 +320,53 @@
 				526D52F824A5FF2700DB6E71 /* activeChats.json in Resources */,
 				52D6CBE424933FDD00C89474 /* Assets.xcassets in Resources */,
 				526D52F924A5FF2700DB6E71 /* waitingChats.json in Resources */,
+				52A9F32B24B481BA00D8C4CE /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		92EECF76491F0BFB7273D856 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MySimpleChat-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9AB6167AA7C441F8A5565468 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MySimpleChat/Pods-MySimpleChat-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MySimpleChat/Pods-MySimpleChat-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MySimpleChat/Pods-MySimpleChat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		52D6CBD324933FDC00C89474 /* Sources */ = {
@@ -466,6 +539,7 @@
 		};
 		52D6CBEC24933FDD00C89474 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D477C7D755379527A3114AC /* Pods-MySimpleChat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -484,6 +558,7 @@
 		};
 		52D6CBED24933FDD00C89474 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 56C1E53CA4BC047E37B8440E /* Pods-MySimpleChat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
