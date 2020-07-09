@@ -132,13 +132,20 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		521EA0A624B7877E0058C632 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				521EA0A224B7706D0058C632 /* Validation.swift */,
+				521EA0A424B77CEB0058C632 /* AuthError.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		52939F8724B4EA8500DED883 /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				52B7771E24AE2608007337E6 /* Models */,
 				52939F8824B4EB1800DED883 /* AuthService.swift */,
-				521EA0A224B7706D0058C632 /* Validation.swift */,
-				521EA0A424B77CEB0058C632 /* AuthError.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -254,6 +261,7 @@
 				52C98A9624A367910095571C /* Controllers */,
 				52B7771524A998BE007337E6 /* Protocols */,
 				529B2D012494D99000C0CD94 /* Extensions */,
+				521EA0A624B7877E0058C632 /* Helpers */,
 				52D6CBE324933FDD00C89474 /* Assets.xcassets */,
 				52D6CBE524933FDD00C89474 /* LaunchScreen.storyboard */,
 				52D6CBE824933FDD00C89474 /* Info.plist */,
