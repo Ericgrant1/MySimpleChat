@@ -46,6 +46,7 @@ class SignUpController: UIViewController {
         configureUI()
         
         signUpButton.addTarget(self, action: #selector(handleSignupTapped), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(handleLoginTapped), for: .touchUpInside)
     }
     
     // MARK: - Selectors
@@ -61,6 +62,10 @@ class SignUpController: UIViewController {
                 self.showAlert(with: "Error!", and: error.localizedDescription)
             }
         }
+    }
+    
+    @objc private func handleLoginTapped() {
+        
     }
 }
 
