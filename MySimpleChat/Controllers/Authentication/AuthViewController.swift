@@ -48,6 +48,9 @@ class AuthViewController: UIViewController {
         
         emailButton.addTarget(self, action: #selector(handleEmailTapped), for: .touchUpInside)
         loginButton.addTarget(self, action: #selector(handleAuthLoginTapped), for: .touchUpInside)
+        
+        signUpVC.delegate = self
+        loginVC.delegate = self
     }
     
     // MARK: - Selectors
@@ -94,6 +97,18 @@ extension AuthViewController {
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
         ])
     }
+}
+
+extension AuthViewController: AuthNavigationDelegate {
+    
+    func handleToLoginVC() {
+        present(loginVC, animated: true, completion: nil)
+    }
+    
+    func handleToSignUpVC() {
+        present(signUpVC, animated: true, completion: nil)
+    }
+    
 }
 
 // MARK: - SwiftUI

@@ -10,6 +10,11 @@ import Foundation
 import UIKit
 import SwiftUI
 
+protocol AuthNavigationDelegate: class {
+    func handleToLoginVC()
+    func handleToSignUpVC()
+}
+
 class LoginController: UIViewController {
     
     // MARK: - Properties
@@ -39,6 +44,8 @@ class LoginController: UIViewController {
         return button
     }()
     
+    weak var delegate: AuthNavigationDelegate?
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -67,7 +74,9 @@ class LoginController: UIViewController {
     }
     
     @objc private func handleSignUpTapped() {
-        
+        dismiss(animated: true) {
+            self.delegate?.handleToSignUpVC()
+        }
     }
 }
 

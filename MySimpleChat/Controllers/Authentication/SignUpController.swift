@@ -35,6 +35,8 @@ class SignUpController: UIViewController {
         return button
         }()
     
+    weak var delegate: AuthNavigationDelegate?
+    
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
@@ -65,7 +67,9 @@ class SignUpController: UIViewController {
     }
     
     @objc private func handleLoginTapped() {
-        
+        dismiss(animated: true) {
+            self.delegate?.handleToLoginVC()
+        }
     }
 }
 
