@@ -66,7 +66,9 @@ class LoginController: UIViewController {
         AuthService.shared.login(email: emailTextField.text, password: passwordTextField.text) { (result) in
             switch result {
             case .success(let user):
-                self.showAlert(with: "Successfully!", and: "You're authorized!")
+                self.showAlert(with: "Successfully!", and: "You're authorized!") {
+                    self.present(MainTabBarController(), animated: true, completion: nil)
+                }
             case .failure(let error):
                 self.showAlert(with: "Error!", and: error.localizedDescription)
             }
