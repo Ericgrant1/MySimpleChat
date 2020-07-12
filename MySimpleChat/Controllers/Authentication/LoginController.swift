@@ -10,11 +10,6 @@ import Foundation
 import UIKit
 import SwiftUI
 
-protocol AuthNavigationDelegate: class {
-    func handleToLoginVC()
-    func handleToSignUpVC()
-}
-
 class LoginController: UIViewController {
     
     // MARK: - Properties
