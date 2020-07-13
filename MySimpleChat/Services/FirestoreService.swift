@@ -29,8 +29,16 @@ class FirestoreService {
                      completion: @escaping(Result<ModelUser, Error>) -> Void) {
         
         guard Validation.isFieled(username: username, description: description, sex: sex) else {
-            completion(.failure(<#T##Error#>))
+            completion(.failure(UserError.notPopulated))
             return
         }
+        
+        var modelUser = ModelUser(username: username!,
+                                  email: email,
+                                  avatarImageString: "not exist",
+                                  description: description!,
+                                  sex: sex!,
+                                  id: id)
+        self.usersRef.document(modelUser.id).setData(<#T##documentData: [String : Any]##[String : Any]#>, completion: <#T##((Error?) -> Void)?##((Error?) -> Void)?##(Error?) -> Void#>)
     }
 }
