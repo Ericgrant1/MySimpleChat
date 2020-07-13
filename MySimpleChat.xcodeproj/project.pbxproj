@@ -51,6 +51,7 @@
 		52D6CBE724933FDD00C89474 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52D6CBE524933FDD00C89474 /* LaunchScreen.storyboard */; };
 		52D6CBFD2493AFE700C89474 /* UIButtonExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D6CBFC2493AFE700C89474 /* UIButtonExt.swift */; };
 		52DEC86924BCBB6A0075B7E4 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DEC86824BCBB6A0075B7E4 /* FirestoreService.swift */; };
+		52DEC86B24BCCA9B0075B7E4 /* UserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DEC86A24BCCA9B0075B7E4 /* UserError.swift */; };
 		E3E530A0EF470BBA84CAED2A /* Pods_MySimpleChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 995CA0384FF21F29D3EFC7FB /* Pods_MySimpleChat.framework */; };
 /* End PBXBuildFile section */
 
@@ -102,6 +103,7 @@
 		52D6CBE824933FDD00C89474 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52D6CBFC2493AFE700C89474 /* UIButtonExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExt.swift; sourceTree = "<group>"; };
 		52DEC86824BCBB6A0075B7E4 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
+		52DEC86A24BCCA9B0075B7E4 /* UserError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserError.swift; sourceTree = "<group>"; };
 		56C1E53CA4BC047E37B8440E /* Pods-MySimpleChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySimpleChat.release.xcconfig"; path = "Target Support Files/Pods-MySimpleChat/Pods-MySimpleChat.release.xcconfig"; sourceTree = "<group>"; };
 		995CA0384FF21F29D3EFC7FB /* Pods_MySimpleChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MySimpleChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -141,6 +143,7 @@
 			children = (
 				521EA0A224B7706D0058C632 /* Validation.swift */,
 				521EA0A424B77CEB0058C632 /* AuthError.swift */,
+				52DEC86A24BCCA9B0075B7E4 /* UserError.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 				529B2CFD2493BCDE00C0CD94 /* UILabelExt.swift in Sources */,
 				529B2CFF2493BECF00C0CD94 /* UIImageExt.swift in Sources */,
 				52C98A9A24A36AC90095571C /* MainTabBarController.swift in Sources */,
+				52DEC86B24BCCA9B0075B7E4 /* UserError.swift in Sources */,
 				52B7771424A9989F007337E6 /* ConfigureCell.swift in Sources */,
 				52B7772924B22EB3007337E6 /* UIViewExt.swift in Sources */,
 				52D6CBFD2493AFE700C89474 /* UIButtonExt.swift in Sources */,

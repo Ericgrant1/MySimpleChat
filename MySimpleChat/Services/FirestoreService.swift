@@ -19,4 +19,18 @@ class FirestoreService {
     private var usersRef: CollectionReference {
         return db.collection("users")
     }
+    
+    func saveProfile(id: String,
+                     email: String,
+                     username: String?,
+                     avatarImageString: String?,
+                     description: String?,
+                     sex: String?,
+                     completion: @escaping(Result<ModelUser, Error>) -> Void) {
+        
+        guard Validation.isFieled(username: username, description: description, sex: sex) else {
+            completion(.failure(<#T##Error#>))
+            return
+        }
+    }
 }
