@@ -59,7 +59,7 @@ class SignUpController: UIViewController {
             switch result {
             case .success(let user):
                 self.showAlert(with: "Successfully!", and: "You're registered!") {
-                    self.present(ProfileController(), animated: true, completion: nil)
+                    self.present(ProfileController(currentUser: user), animated: true, completion: nil)
                 }
                 
             case .failure(let error):

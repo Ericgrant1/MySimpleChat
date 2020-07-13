@@ -33,12 +33,18 @@ class FirestoreService {
             return
         }
         
-        var modelUser = ModelUser(username: username!,
+        let modelUser = ModelUser(username: username!,
                                   email: email,
                                   avatarImageString: "not exist",
                                   description: description!,
                                   sex: sex!,
                                   id: id)
-        self.usersRef.document(modelUser.id).setData(<#T##documentData: [String : Any]##[String : Any]#>, completion: <#T##((Error?) -> Void)?##((Error?) -> Void)?##(Error?) -> Void#>)
+        self.usersRef.document(modelUser.id).setData(modelUser.representation) { (error) in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(modelUser))
+            }
+        }
     }
 }
