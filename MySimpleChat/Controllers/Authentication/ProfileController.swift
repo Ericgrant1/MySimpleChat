@@ -59,20 +59,23 @@ class ProfileController: UIViewController {
     
     @objc private func handleChatsButtonTapped() {
         
-        FirestoreService.shared.saveProfile(id: currentUser.uid,
-                                            email: currentUser.email!,
-                                            username: fullnameTextField.text,
-                                            avatarImageString: "nil",
-                                            description: aboutMeTextField.text,
-                                            sex: sexSegmentedControl.titleForSegment(
-                                                at: sexSegmentedControl.selectedSegmentIndex)) { (result) in
-                                                switch result {
-                                                case .success(let modelUser):
-                                                    self.showAlert(with: "Successfully!", and: "Have a nice chat!")
-                                                    print(modelUser)
-                                                case .failure(let error):
-                                                    self.showAlert(with: "Error!", and: error.localizedDescription)
-                                                }
+        FirestoreService.shared.saveProfile(
+            id: currentUser.uid,
+            email: currentUser.email!,
+            username: fullnameTextField.text,
+            avatarImageString: "nil",
+            description: aboutMeTextField.text,
+            sex: sexSegmentedControl.titleForSegment(
+                at: sexSegmentedControl.selectedSegmentIndex)) { (result) in
+                    switch result {
+                    case .success(let modelUser):
+                        self.showAlert(with: "Successfully!", and: "Have a nice chat!", completion: {
+                            self.present(MainTabBarController(), animated: true, completion: nil)
+                        })
+                        print(modelUser)
+                    case .failure(let error):
+                        self.showAlert(with: "Error!", and: error.localizedDescription)
+                    }
         }
     }
 }

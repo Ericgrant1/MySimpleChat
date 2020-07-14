@@ -62,7 +62,14 @@ class LoginController: UIViewController {
             switch result {
             case .success(let user):
                 self.showAlert(with: "Successfully!", and: "You're authorized!") {
-                    self.present(MainTabBarController(), animated: true, completion: nil)
+                    FirestoreService.shared.getUserData(user: user) { (result) in
+                        switch result {
+                        case .success(let modelUser):
+                            self.present(MainTabBarController(), animated: true, completion: nil)
+                        case .failure(let error):
+                            self.present(ProfileController(currentUser: user), animated: true, completion: nil)
+                        }
+                    }
                 }
             case .failure(let error):
                 self.showAlert(with: "Error!", and: error.localizedDescription)
