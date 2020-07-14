@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import SwiftUI
+import FirebaseAuth
 
 class ContactsViewController: UIViewController {
     
@@ -39,6 +40,24 @@ class ContactsViewController: UIViewController {
         configureCollectionView()
         createDataSource()
         reloadData(with: nil)
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(handleSignOut))
+    }
+    
+    // MARK: - Selectors
+    
+    @objc private func handleSignOut() {
+        let ac = UIAlertController(title: nil, message: "Are you sure you want to log out ?", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        ac.addAction(UIAlertAction(title: "Log Out", style: .destructive, handler: { (_) in
+            do {
+                try Auth.auth().signOut()
+                UIApplication.shared.windows.filter { $0.isKeyWindow }.first?.rootViewController = AuthViewController()
+            } catch {
+                print("Error logging out: \(error.localizedDescription)")
+            }
+        }))
+        present(ac, animated: true, completion: nil)
     }
     
     // MARK: - Helpers
