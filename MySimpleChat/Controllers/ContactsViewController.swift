@@ -14,7 +14,8 @@ class ContactsViewController: UIViewController {
     
     // MARK: - Properties
     
-    let users = Bundle.main.decode([ModelUser].self, from: "users.json")
+    // let users = Bundle.main.decode([ModelUser].self, from: "users.json")
+    let users = [ModelUser]()
     var collectionView: UICollectionView! = nil
     var dataSource: UICollectionViewDiffableDataSource<Section, ModelUser>!
     
