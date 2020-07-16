@@ -15,6 +15,8 @@ class ContactsViewController: UIViewController {
     
     // MARK: - Properties
     
+    private let currentUser: ModelUser
+    
     // let users = Bundle.main.decode([ModelUser].self, from: "users.json")
     let users = [ModelUser]()
     var collectionView: UICollectionView! = nil
@@ -31,6 +33,16 @@ class ContactsViewController: UIViewController {
     }
     
     // MARK: - Lifecycle
+    
+    init(currentUser: ModelUser) {
+        self.currentUser = currentUser
+        super.init(nibName: nil, bundle: nil)
+        title = currentUser.username
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
