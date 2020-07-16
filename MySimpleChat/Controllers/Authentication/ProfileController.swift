@@ -70,7 +70,7 @@ class ProfileController: UIViewController {
                     switch result {
                     case .success(let modelUser):
                         self.showAlert(with: "Successfully!", and: "Have a nice chat!", completion: {
-                            self.present(MainTabBarController(), animated: true, completion: nil)
+                            self.present(MainTabBarController(currentUser: modelUser), animated: true, completion: nil)
                         })
                         print(modelUser)
                     case .failure(let error):

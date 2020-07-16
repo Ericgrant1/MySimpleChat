@@ -17,7 +17,12 @@ class MainTabBarController: UITabBarController {
     
     // MARK: - Lifecycle
     
-    init(currentUser: ModelUser) {
+    init(currentUser: ModelUser = ModelUser(username: "qqq",
+                                            email: "qqq",
+                                            avatarImageString: "qqq",
+                                            description: "qqq",
+                                            sex: "qqq",
+                                            id: "qqq")) {
         self.currentUser = currentUser
         super.init(nibName: nil, bundle: nil)
     }
