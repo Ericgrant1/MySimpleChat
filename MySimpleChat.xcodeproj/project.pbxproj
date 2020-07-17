@@ -300,6 +300,7 @@
 				52D6CBD424933FDC00C89474 /* Frameworks */,
 				52D6CBD524933FDC00C89474 /* Resources */,
 				9AB6167AA7C441F8A5565468 /* [CP] Embed Pods Frameworks */,
+				C2AA767D65D33A1EBC32653D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -397,6 +398,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MySimpleChat/Pods-MySimpleChat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C2AA767D65D33A1EBC32653D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MySimpleChat/Pods-MySimpleChat-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MySimpleChat/Pods-MySimpleChat-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MySimpleChat/Pods-MySimpleChat-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
