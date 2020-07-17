@@ -49,9 +49,12 @@ class AuthViewController: UIViewController {
         
         emailButton.addTarget(self, action: #selector(handleEmailTapped), for: .touchUpInside)
         loginButton.addTarget(self, action: #selector(handleAuthLoginTapped), for: .touchUpInside)
+        googleButton.addTarget(self, action: #selector(handleGoogleButtonTapped), for: .touchUpInside)
         
         signUpVC.delegate = self
         loginVC.delegate = self
+        
+        GIDSignIn.sharedInstance()?.delegate = self
     }
     
     // MARK: - Selectors
@@ -64,6 +67,11 @@ class AuthViewController: UIViewController {
     @objc private func handleAuthLoginTapped() {
         print(#function)
         present(loginVC, animated: true, completion: nil)
+    }
+    
+    @objc private func handleGoogleButtonTapped() {
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+        GIDSignIn.sharedInstance().signIn()
     }
     
     // MARK: - Hepler functions
@@ -109,7 +117,33 @@ extension AuthViewController: AuthNavigationDelegate {
     func handleToSignUpVC() {
         present(signUpVC, animated: true, completion: nil)
     }
+}
+
+extension AuthViewController: GIDSignInDelegate {
     
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        AuthService.shared.googleLogin(user: user, error: error) { (result) in
+            switch result {
+            case .success(let user):
+                FirestoreService.shared.getUserData(user: user) { (result) in
+                    switch result {
+                    case .success(let modelUser):
+                        self.showAlert(with: "Successfully!", and: "You're registered!") {
+                            let mainTabBar = MainTabBarController(currentUser: modelUser)
+                            mainTabBar.modalPresentationStyle = .fullScreen
+                            self.present(mainTabBar, animated: true, completion: nil)
+                        }
+                    case .failure(let error):
+                        self.showAlert(with: "Successfully!", and: "You're registered!") {
+                            self.present(ProfileController(currentUser: user), animated: true, completion: nil)
+                        }
+                    }
+                }
+            case .failure(let error):
+                self.showAlert(with: "Error!", and: error.localizedDescription)
+            }
+        }
+    }
 }
 
 // MARK: - SwiftUI
