@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import SwiftUI
+import GoogleSignIn
 
 class LoginController: UIViewController {
     
@@ -52,6 +53,7 @@ class LoginController: UIViewController {
         
         loginButton.addTarget(self, action: #selector(handleLoginTapped), for: .touchUpInside)
         signUpButton.addTarget(self, action: #selector(handleSignUpTapped), for: .touchUpInside)
+        googleButton.addTarget(self, action: #selector(handleGoogleButtonTapped), for: .touchUpInside)
     }
     
     // MARK: - Selectors
@@ -83,6 +85,11 @@ class LoginController: UIViewController {
         dismiss(animated: true) {
             self.delegate?.handleToSignUpVC()
         }
+    }
+    
+    @objc private func handleGoogleButtonTapped() {
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+        GIDSignIn.sharedInstance().signIn()
     }
 }
 
