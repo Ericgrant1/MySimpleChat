@@ -108,6 +108,8 @@ extension AuthViewController {
     }
 }
 
+// MARK: - AuthNavigationDelegate
+
 extension AuthViewController: AuthNavigationDelegate {
     
     func handleToLoginVC() {
@@ -119,6 +121,8 @@ extension AuthViewController: AuthNavigationDelegate {
     }
 }
 
+// MARK: - GIDSignInDelegate
+
 extension AuthViewController: GIDSignInDelegate {
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
@@ -128,14 +132,14 @@ extension AuthViewController: GIDSignInDelegate {
                 FirestoreService.shared.getUserData(user: user) { (result) in
                     switch result {
                     case .success(let modelUser):
-                        self.showAlert(with: "Successfully!", and: "You're registered!") {
+                        UIApplication.getTopViewController()?.showAlert(with: "Successfully!", and: "You're logged in!") {
                             let mainTabBar = MainTabBarController(currentUser: modelUser)
                             mainTabBar.modalPresentationStyle = .fullScreen
-                            self.present(mainTabBar, animated: true, completion: nil)
+                            UIApplication.getTopViewController()?.present(mainTabBar, animated: true, completion: nil)
                         }
-                    case .failure(let error):
-                        self.showAlert(with: "Successfully!", and: "You're registered!") {
-                            self.present(ProfileController(currentUser: user), animated: true, completion: nil)
+                    case .failure(_):
+                        UIApplication.getTopViewController()?.showAlert(with: "Successfully!", and: "You're registered!") {
+                            UIApplication.getTopViewController()?.present(ProfileController(currentUser: user), animated: true, completion: nil)
                         }
                     }
                 }
