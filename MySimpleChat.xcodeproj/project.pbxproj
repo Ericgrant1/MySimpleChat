@@ -53,6 +53,7 @@
 		52DEC86924BCBB6A0075B7E4 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DEC86824BCBB6A0075B7E4 /* FirestoreService.swift */; };
 		52DEC86B24BCCA9B0075B7E4 /* UserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DEC86A24BCCA9B0075B7E4 /* UserError.swift */; };
 		52EEDD4624C4A12400786A39 /* UIApplicationExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EEDD4524C4A12400786A39 /* UIApplicationExt.swift */; };
+		52EEDD4824C600EE00786A39 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EEDD4724C600EE00786A39 /* StorageService.swift */; };
 		E3E530A0EF470BBA84CAED2A /* Pods_MySimpleChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 995CA0384FF21F29D3EFC7FB /* Pods_MySimpleChat.framework */; };
 /* End PBXBuildFile section */
 
@@ -106,6 +107,7 @@
 		52DEC86824BCBB6A0075B7E4 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 		52DEC86A24BCCA9B0075B7E4 /* UserError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserError.swift; sourceTree = "<group>"; };
 		52EEDD4524C4A12400786A39 /* UIApplicationExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExt.swift; sourceTree = "<group>"; };
+		52EEDD4724C600EE00786A39 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		56C1E53CA4BC047E37B8440E /* Pods-MySimpleChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySimpleChat.release.xcconfig"; path = "Target Support Files/Pods-MySimpleChat/Pods-MySimpleChat.release.xcconfig"; sourceTree = "<group>"; };
 		995CA0384FF21F29D3EFC7FB /* Pods_MySimpleChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MySimpleChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -156,6 +158,7 @@
 				52B7771E24AE2608007337E6 /* Models */,
 				52939F8824B4EB1800DED883 /* AuthService.swift */,
 				52DEC86824BCBB6A0075B7E4 /* FirestoreService.swift */,
+				52EEDD4724C600EE00786A39 /* StorageService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -455,6 +458,7 @@
 				52B7771424A9989F007337E6 /* ConfigureCell.swift in Sources */,
 				52B7772924B22EB3007337E6 /* UIViewExt.swift in Sources */,
 				52D6CBFD2493AFE700C89474 /* UIButtonExt.swift in Sources */,
+				52EEDD4824C600EE00786A39 /* StorageService.swift in Sources */,
 				52B7772124AF9531007337E6 /* UserCell.swift in Sources */,
 				529B2D07249535E700C0CD94 /* SignUpController.swift in Sources */,
 				521EA0A324B7706D0058C632 /* Validation.swift in Sources */,
