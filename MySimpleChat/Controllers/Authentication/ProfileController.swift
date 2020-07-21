@@ -68,7 +68,7 @@ class ProfileController: UIViewController {
             id: currentUser.uid,
             email: currentUser.email!,
             username: fullnameTextField.text,
-            avatarImageString: "nil",
+            avatarImage: populateImageView.profileImageView.image,
             description: aboutMeTextField.text,
             sex: sexSegmentedControl.titleForSegment(
                 at: sexSegmentedControl.selectedSegmentIndex)) { (result) in

@@ -38,7 +38,7 @@ class FirestoreService {
     func saveProfile(id: String,
                      email: String,
                      username: String?,
-                     avatarImageString: String?,
+                     avatarImage: UIImage?,
                      description: String?,
                      sex: String?,
                      completion: @escaping(Result<ModelUser, Error>) -> Void) {
