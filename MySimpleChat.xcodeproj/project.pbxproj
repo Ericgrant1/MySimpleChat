@@ -54,6 +54,7 @@
 		52DEC86B24BCCA9B0075B7E4 /* UserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DEC86A24BCCA9B0075B7E4 /* UserError.swift */; };
 		52EEDD4624C4A12400786A39 /* UIApplicationExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EEDD4524C4A12400786A39 /* UIApplicationExt.swift */; };
 		52EEDD4824C600EE00786A39 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EEDD4724C600EE00786A39 /* StorageService.swift */; };
+		52EEDD4A24C76EBF00786A39 /* UIPhotoExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EEDD4924C76EBF00786A39 /* UIPhotoExt.swift */; };
 		E3E530A0EF470BBA84CAED2A /* Pods_MySimpleChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 995CA0384FF21F29D3EFC7FB /* Pods_MySimpleChat.framework */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +109,7 @@
 		52DEC86A24BCCA9B0075B7E4 /* UserError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserError.swift; sourceTree = "<group>"; };
 		52EEDD4524C4A12400786A39 /* UIApplicationExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExt.swift; sourceTree = "<group>"; };
 		52EEDD4724C600EE00786A39 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		52EEDD4924C76EBF00786A39 /* UIPhotoExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPhotoExt.swift; sourceTree = "<group>"; };
 		56C1E53CA4BC047E37B8440E /* Pods-MySimpleChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySimpleChat.release.xcconfig"; path = "Target Support Files/Pods-MySimpleChat/Pods-MySimpleChat.release.xcconfig"; sourceTree = "<group>"; };
 		995CA0384FF21F29D3EFC7FB /* Pods_MySimpleChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MySimpleChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -176,6 +178,7 @@
 				52B7772224AF99ED007337E6 /* UIViewControllerExt.swift */,
 				52B7772824B22EB3007337E6 /* UIViewExt.swift */,
 				52EEDD4524C4A12400786A39 /* UIApplicationExt.swift */,
+				52EEDD4924C76EBF00786A39 /* UIPhotoExt.swift */,
 				526D52F624A5FF2700DB6E71 /* activeChats.json */,
 				526D52F724A5FF2700DB6E71 /* waitingChats.json */,
 				52B7771824AE1F01007337E6 /* users.json */,
@@ -454,6 +457,7 @@
 				529B2CFD2493BCDE00C0CD94 /* UILabelExt.swift in Sources */,
 				529B2CFF2493BECF00C0CD94 /* UIImageExt.swift in Sources */,
 				52C98A9A24A36AC90095571C /* MainTabBarController.swift in Sources */,
+				52EEDD4A24C76EBF00786A39 /* UIPhotoExt.swift in Sources */,
 				52DEC86B24BCCA9B0075B7E4 /* UserError.swift in Sources */,
 				52B7771424A9989F007337E6 /* ConfigureCell.swift in Sources */,
 				52B7772924B22EB3007337E6 /* UIViewExt.swift in Sources */,

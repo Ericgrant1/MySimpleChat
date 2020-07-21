@@ -23,6 +23,7 @@ class StorageService {
     
     func upload(image: UIImage, completion: @escaping(Result<URL, Error>) -> Void) {
         
-        
+        guard let scaledImage = image.scaledToSafeUploadSize,
+            let imageData = scaledImage.jpegData(compressionQuality: 0.4) else { return }
     }
 }
