@@ -48,6 +48,11 @@ class FirestoreService {
             return
         }
         
+        guard avatarImage != #imageLiteral(resourceName: "avatar") else {
+            completion(.failure(UserError.photoNotExist))
+            return
+        }
+        
         let modelUser = ModelUser(username: username!,
                                   email: email,
                                   avatarImageString: "not exist",
