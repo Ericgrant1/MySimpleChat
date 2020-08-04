@@ -21,9 +21,31 @@ class StorageService {
         return storageRef.child("avatars")
     }
     
+    private var currentUserId: String {
+        return Auth.auth().currentUser!.uid
+    }
+    
     func upload(image: UIImage, completion: @escaping(Result<URL, Error>) -> Void) {
         
         guard let scaledImage = image.scaledToSafeUploadSize,
             let imageData = scaledImage.jpegData(compressionQuality: 0.4) else { return }
+        
+        let metadata = StorageMetadata()
+        metadata.contentType = "image/jpeg"
+        
+        avatarReferance.child(currentUserId).putData(imageData, metadata: metadata) { (metadata, error) in
+            guard let _ = metadata else {
+                completion(.failure(error!))
+                return
+            }
+            self.avatarReferance.child(self.currentUserId).downloadURL { (url, error) in
+                guard let downloadURL = url else {
+                    completion(.failure(error!))
+                    return
+                }
+                
+                completion(.success(downloadURL))
+            }
+        }
     }
 }

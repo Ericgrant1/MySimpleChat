@@ -53,18 +53,26 @@ class FirestoreService {
             return
         }
         
-        let modelUser = ModelUser(username: username!,
+        var modelUser = ModelUser(username: username!,
                                   email: email,
                                   avatarImageString: "not exist",
                                   description: description!,
                                   sex: sex!,
                                   id: id)
-        self.usersRef.document(modelUser.id).setData(modelUser.representation) { (error) in
-            if let error = error {
+        StorageService.shared.upload(image: avatarImage!) { (result) in
+            switch result {
+            case .success(let url):
+                modelUser.avatarImageString = url.absoluteString
+                self.usersRef.document(modelUser.id).setData(modelUser.representation) { (error) in
+                    if let error = error {
+                        completion(.failure(error))
+                    } else {
+                        completion(.success(modelUser))
+                    }
+                }
+            case .failure(let error):
                 completion(.failure(error))
-            } else {
-                completion(.success(modelUser))
             }
-        }
-    }
+        } // StorageService
+    } // saveProfile
 }
