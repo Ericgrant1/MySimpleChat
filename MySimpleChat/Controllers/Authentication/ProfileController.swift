@@ -58,9 +58,18 @@ class ProfileController: UIViewController {
         configureUI()
         
         goToChatsButton.addTarget(self, action: #selector(handleChatsButtonTapped), for: .touchUpInside)
+        
+        populateImageView.plusPhotoButton.addTarget(self, action: #selector(handlePlusButtonTapped), for: .touchUpInside)
     }
     
     // MARK: - Selectors
+    
+    @objc private func handlePlusButtonTapped() {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.sourceType = .photoLibrary
+        present(imagePickerController, animated: true, completion: nil)
+    }
     
     @objc private func handleChatsButtonTapped() {
         
@@ -131,6 +140,19 @@ extension ProfileController {
              stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
              stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
          ])
+    }
+}
+
+// MARK: - UIImagePickerControllerDelegate
+
+extension ProfileController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        picker.dismiss(animated: true, completion: nil)
+        
+        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
+        populateImageView.profileImageView.image = image
     }
 }
 
