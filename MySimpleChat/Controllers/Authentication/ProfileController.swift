@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import SwiftUI
 import FirebaseAuth
+import SDWebImage
 
 class ProfileController: UIViewController {
     
@@ -43,6 +44,9 @@ class ProfileController: UIViewController {
             fullnameTextField.text = username
         }
         // TODO set google image
+        if let imageURL = currentUser.photoURL {
+            populateImageView.profileImageView.sd_setImage(with: imageURL, completed: nil)
+        }
     }
     
     required init?(coder: NSCoder) {
