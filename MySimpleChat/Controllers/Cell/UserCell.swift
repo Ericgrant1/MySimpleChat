@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import SwiftUI
+import SDWebImage
 
 class UserCell: UICollectionViewCell, ConfigureCell {
     
@@ -43,6 +44,10 @@ class UserCell: UICollectionViewCell, ConfigureCell {
         self.containerView.clipsToBounds = true
     }
     
+    override func prepareForReuse() {
+        userImageView.image = nil
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -51,8 +56,9 @@ class UserCell: UICollectionViewCell, ConfigureCell {
     
     func configure<U>(with value: U) where U : Hashable {
         guard let user: ModelUser = value as? ModelUser else { return }
-        userImageView.image = UIImage(named: user.avatarImageString)
         userName.text = user.username
+        guard let url = URL(string: user.avatarImageString) else { return }
+        userImageView.sd_setImage(with: url, completed: nil)
     }
     
     private func configureUI() {
