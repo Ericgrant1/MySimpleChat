@@ -13,6 +13,7 @@
 		521EA0A324B7706D0058C632 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521EA0A224B7706D0058C632 /* Validation.swift */; };
 		521EA0A524B77CEB0058C632 /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521EA0A424B77CEB0058C632 /* AuthError.swift */; };
 		521F166D24BB6313009E51DE /* AuthNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521F166C24BB6313009E51DE /* AuthNavigationDelegate.swift */; };
+		523D6B6A24DC628000DB1999 /* ListenerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523D6B6924DC628000DB1999 /* ListenerService.swift */; };
 		526D52F524A5FAB500DB6E71 /* BundleDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526D52F424A5FAB500DB6E71 /* BundleDecodable.swift */; };
 		526D52F824A5FF2700DB6E71 /* activeChats.json in Resources */ = {isa = PBXBuildFile; fileRef = 526D52F624A5FF2700DB6E71 /* activeChats.json */; };
 		526D52F924A5FF2700DB6E71 /* waitingChats.json in Resources */ = {isa = PBXBuildFile; fileRef = 526D52F724A5FF2700DB6E71 /* waitingChats.json */; };
@@ -66,6 +67,7 @@
 		521EA0A224B7706D0058C632 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		521EA0A424B77CEB0058C632 /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
 		521F166C24BB6313009E51DE /* AuthNavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNavigationDelegate.swift; sourceTree = "<group>"; };
+		523D6B6924DC628000DB1999 /* ListenerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListenerService.swift; sourceTree = "<group>"; };
 		526D52F424A5FAB500DB6E71 /* BundleDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleDecodable.swift; sourceTree = "<group>"; };
 		526D52F624A5FF2700DB6E71 /* activeChats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = activeChats.json; sourceTree = "<group>"; };
 		526D52F724A5FF2700DB6E71 /* waitingChats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = waitingChats.json; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				52939F8824B4EB1800DED883 /* AuthService.swift */,
 				52DEC86824BCBB6A0075B7E4 /* FirestoreService.swift */,
 				52EEDD4724C600EE00786A39 /* StorageService.swift */,
+				523D6B6924DC628000DB1999 /* ListenerService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 				526D52F524A5FAB500DB6E71 /* BundleDecodable.swift in Sources */,
 				52D6CBDD24933FDC00C89474 /* SceneDelegate.swift in Sources */,
 				529B2D0D2496808400C0CD94 /* ProfileController.swift in Sources */,
+				523D6B6A24DC628000DB1999 /* ListenerService.swift in Sources */,
 				529B2CFD2493BCDE00C0CD94 /* UILabelExt.swift in Sources */,
 				529B2CFF2493BECF00C0CD94 /* UIImageExt.swift in Sources */,
 				52C98A9A24A36AC90095571C /* MainTabBarController.swift in Sources */,

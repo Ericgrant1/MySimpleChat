@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  AuthViewController.swift
 //  MySimpleChat
 //
 //  Created by Eric Grant on 12.06.2020.
@@ -73,9 +73,6 @@ class AuthViewController: UIViewController {
         GIDSignIn.sharedInstance()?.presentingViewController = self
         GIDSignIn.sharedInstance().signIn()
     }
-    
-    // MARK: - Hepler functions
-    
 }
 
 // MARK: - Setup constraints
