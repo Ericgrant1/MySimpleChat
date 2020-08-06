@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import SwiftUI
 import FirebaseAuth
+import FirebaseFirestore
 
 class ContactsViewController: UIViewController {
     
@@ -18,7 +19,9 @@ class ContactsViewController: UIViewController {
     private let currentUser: ModelUser
     
     // let users = Bundle.main.decode([ModelUser].self, from: "users.json")
-    let users = [ModelUser]()
+    var users = [ModelUser]()
+    private var usersListener: ListenerRegistration?
+    
     var collectionView: UICollectionView! = nil
     var dataSource: UICollectionViewDiffableDataSource<Section, ModelUser>!
     
@@ -40,6 +43,10 @@ class ContactsViewController: UIViewController {
         title = currentUser.username
     }
     
+    deinit {
+        usersListener?.remove()
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -51,9 +58,18 @@ class ContactsViewController: UIViewController {
         setupSearchBar()
         configureCollectionView()
         createDataSource()
-        reloadData(with: nil)
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(handleSignOut))
+        
+        usersListener = ListenerService.shared.userObserve(users: users, completion: { (result) in
+            switch result {
+            case .success(let users):
+                self.users = users
+                self.reloadData(with: nil)
+            case .failure(let error):
+                self.showAlert(with: "Error", and: error.localizedDescription)
+            }
+        })
     }
     
     // MARK: - Selectors
