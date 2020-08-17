@@ -75,21 +75,21 @@ class InsertedTextField: UITextField {
 
 // MARK: - SwiftUI
 
-struct TextFieldProvider: PreviewProvider {
-    
-    static var previews: some View {
-        ContainerView().edgesIgnoringSafeArea(.all)
-    }
-    
-    struct ContainerView: UIViewControllerRepresentable {
-        
-        let profileVC = ProfileViewController()
-        
-        func makeUIViewController(context: Context) -> ProfileViewController {
-            return profileVC
-        }
-        
-        func updateUIViewController(_ uiViewController: ProfileViewController, context: Context) {
-        }
-    }
-}
+//struct TextFieldProvider: PreviewProvider {
+//    
+//    static var previews: some View {
+//        ContainerView().edgesIgnoringSafeArea(.all)
+//    }
+//    
+//    struct ContainerView: UIViewControllerRepresentable {
+//        
+//        let profileVC = ProfileViewController()
+//        
+//        func makeUIViewController(context: Context) -> ProfileViewController {
+//            return profileVC
+//        }
+//        
+//        func updateUIViewController(_ uiViewController: ProfileViewController, context: Context) {
+//        }
+//    }
+//}

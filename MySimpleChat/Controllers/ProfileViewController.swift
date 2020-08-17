@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import SwiftUI
+import SDWebImage
 
 class ProfileViewController: UIViewController {
     
@@ -19,6 +20,20 @@ class ProfileViewController: UIViewController {
     let nameLabel = UILabel(text: "Aron Freedman", font: .systemFont(ofSize: 21, weight: .light), textColor: .black)
     let aboutMeLabel = UILabel(text: "You have the opportunity to chat with the best man in the World!", font: .systemFont(ofSize: 15, weight: .light), textColor: .black)
     let userTextField = InsertedTextField()
+    
+    private let user: ModelUser
+    
+    init(user: ModelUser) {
+        self.user = user
+        self.nameLabel.text = user.username
+        self.aboutMeLabel.text = user.description
+        self.imageView.sd_setImage(with: URL(string: user.avatarImageString), completed: nil)
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - Lifecycle
     
@@ -104,21 +119,21 @@ extension ProfileViewController {
 
 // MARK: - SwiftUI
 
-struct ProfileViewControllerProvider: PreviewProvider {
-    
-    static var previews: some View {
-        ContainerView().edgesIgnoringSafeArea(.all)
-    }
-    
-    struct ContainerView: UIViewControllerRepresentable {
-        
-        let profileVC = ProfileViewController()
-        
-        func makeUIViewController(context: Context) -> ProfileViewController {
-            return profileVC
-        }
-        
-        func updateUIViewController(_ uiViewController: ProfileViewController, context: Context) {
-        }
-    }
-}
+//struct ProfileViewControllerProvider: PreviewProvider {
+//
+//    static var previews: some View {
+//        ContainerView().edgesIgnoringSafeArea(.all)
+//    }
+//
+//    struct ContainerView: UIViewControllerRepresentable {
+//
+//        let profileVC = ProfileViewController()
+//
+//        func makeUIViewController(context: Context) -> ProfileViewController {
+//            return profileVC
+//        }
+//
+//        func updateUIViewController(_ uiViewController: ProfileViewController, context: Context) {
+//        }
+//    }
+//}
