@@ -10,16 +10,16 @@ import Foundation
 import UIKit
 
 struct MyChat: Hashable, Decodable {
-    var username: String
-    var userImageString: String
-    var lastMessage: String
-    var id: Int
+    var friendUsername: String
+    var friendImageStringURL: String
+    var lastMessageContent: String
+    var friendId: Int
     
     func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
+        hasher.combine(friendId)
     }
     
     static func == (lhs: MyChat, rhs: MyChat) -> Bool {
-        return lhs.id == rhs.id
+        return lhs.friendId == rhs.friendId
     }
 }

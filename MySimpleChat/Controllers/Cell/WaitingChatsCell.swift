@@ -38,7 +38,7 @@ class WaitingChatsCell: UICollectionViewCell, ConfigureCell {
     
     func configure<U>(with value: U) where U : Hashable {
         guard let chat: MyChat = value as? MyChat else { return }
-        friendImageView.image = UIImage(named: chat.userImageString)
+        friendImageView.image = UIImage(named: chat.friendImageStringURL)
         
     }
     
