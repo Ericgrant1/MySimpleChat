@@ -49,6 +49,11 @@ class ProfileViewController: UIViewController {
     
     @objc private func handleSendMessage() {
         print(#function)
+        guard let message = userTextField.text, message != "" else { return }
+        
+        self.dismiss(animated: true) {
+            UIApplication.getTopViewController()?.showAlert(with: "Test", and: "Hello!!!")
+        }
     }
     
     // MARK: - Helpers
