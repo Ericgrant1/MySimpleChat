@@ -15,6 +15,14 @@ struct MyChat: Hashable, Decodable {
     var lastMessageContent: String
     var friendId: String
     
+    var representation: [String: Any] {
+        var rep = ["friendUsername": friendUsername]
+        rep["friendImageStringURL"] = friendImageStringURL
+        rep["lastMessage"] = lastMessageContent
+        rep["friendId"] = friendId
+        return rep
+    }
+    
     func hash(into hasher: inout Hasher) {
         hasher.combine(friendId)
     }

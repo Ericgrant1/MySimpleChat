@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 struct ModelMessage: Hashable {
+    
     let content: String
     let senderId: String
     let senderUsername: String
@@ -22,5 +23,15 @@ struct ModelMessage: Hashable {
         senderUsername = user.username
         sentDate = Date()
         id = nil
+    }
+    
+    var representation: [String: Any] {
+        let rep: [String: Any] = [
+            "created": sentDate,
+            "senderId": sentDate,
+            "senderName": senderUsername,
+            "content": content
+        ]
+        return rep
     }
 }

@@ -79,8 +79,8 @@ class FirestoreService {
         } // StorageService
     } // saveProfile
     
-    func createWaitingChat(message: String, receiver: ModelUser, completion: @escaping (Result<ModelUser, Error>) -> Void) {
-        let reference = db.collection(["users", receiver.id, "waitingChat"].joined(separator: "/"))
+    func createWaitingChat(message: String, receiver: ModelUser, completion: @escaping (Result<Void, Error>) -> Void) {
+        let reference = db.collection(["users", receiver.id, "waitingChats"].joined(separator: "/"))
         let messageReference = reference.document(self.currentUser.id).collection("messages")
         
         let message = ModelMessage(user: currentUser, content: message)
@@ -88,5 +88,19 @@ class FirestoreService {
                           friendImageStringURL: currentUser.avatarImageString,
                           lastMessageContent: message.content,
                           friendId: currentUser.id)
+        
+        reference.document(currentUser.id).setData(chat.representation) { (error) in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            messageReference.addDocument(data: message.representation) { (error) in
+                if let error = error {
+                    completion(.failure(error))
+                    return
+                }
+                completion(.success(Void()))
+            }
+        }
     }
 }
