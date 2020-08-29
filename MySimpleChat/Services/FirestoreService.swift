@@ -83,9 +83,10 @@ class FirestoreService {
         let reference = db.collection(["users", receiver.id, "waitingChat"].joined(separator: "/"))
         let messageReference = reference.document(self.currentUser.id).collection("messages")
         
+        let message = ModelMessage(user: currentUser, content: message)
         let chat = MyChat(friendUsername: currentUser.username,
                           friendImageStringURL: currentUser.avatarImageString,
-                          lastMessageContent: "",
-                          friendId: 11)
+                          lastMessageContent: message.content,
+                          friendId: currentUser.id)
     }
 }

@@ -56,6 +56,7 @@
 		52EEDD4624C4A12400786A39 /* UIApplicationExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EEDD4524C4A12400786A39 /* UIApplicationExt.swift */; };
 		52EEDD4824C600EE00786A39 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EEDD4724C600EE00786A39 /* StorageService.swift */; };
 		52EEDD4A24C76EBF00786A39 /* UIPhotoExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EEDD4924C76EBF00786A39 /* UIPhotoExt.swift */; };
+		52F4323324FABC0F00C57F3F /* ModelMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F4323224FABC0F00C57F3F /* ModelMessage.swift */; };
 		E3E530A0EF470BBA84CAED2A /* Pods_MySimpleChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 995CA0384FF21F29D3EFC7FB /* Pods_MySimpleChat.framework */; };
 /* End PBXBuildFile section */
 
@@ -112,6 +113,7 @@
 		52EEDD4524C4A12400786A39 /* UIApplicationExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExt.swift; sourceTree = "<group>"; };
 		52EEDD4724C600EE00786A39 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		52EEDD4924C76EBF00786A39 /* UIPhotoExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPhotoExt.swift; sourceTree = "<group>"; };
+		52F4323224FABC0F00C57F3F /* ModelMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelMessage.swift; sourceTree = "<group>"; };
 		56C1E53CA4BC047E37B8440E /* Pods-MySimpleChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySimpleChat.release.xcconfig"; path = "Target Support Files/Pods-MySimpleChat/Pods-MySimpleChat.release.xcconfig"; sourceTree = "<group>"; };
 		995CA0384FF21F29D3EFC7FB /* Pods_MySimpleChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MySimpleChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -216,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				52B7771A24AE22FE007337E6 /* ModelUser.swift */,
+				52F4323224FABC0F00C57F3F /* ModelMessage.swift */,
 				52B7771C24AE23C2007337E6 /* MyChat.swift */,
 			);
 			path = Models;
@@ -479,6 +482,7 @@
 				52939F8924B4EB1800DED883 /* AuthService.swift in Sources */,
 				529B2D09249548D100C0CD94 /* TextFieldFormView.swift in Sources */,
 				5218FC482493B5E500E20955 /* UIFontExt.swift in Sources */,
+				52F4323324FABC0F00C57F3F /* ModelMessage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

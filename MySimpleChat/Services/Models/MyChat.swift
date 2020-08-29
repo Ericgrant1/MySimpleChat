@@ -13,7 +13,7 @@ struct MyChat: Hashable, Decodable {
     var friendUsername: String
     var friendImageStringURL: String
     var lastMessageContent: String
-    var friendId: Int
+    var friendId: String
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(friendId)
