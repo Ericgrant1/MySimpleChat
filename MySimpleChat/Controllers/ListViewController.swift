@@ -101,6 +101,8 @@ class ListViewController: UIViewController {
         
         collectionView.register(WaitingChatsCell.self, forCellWithReuseIdentifier: WaitingChatsCell.reuseId)
         collectionView.register(ActiveChatsCell.self, forCellWithReuseIdentifier: ActiveChatsCell.reuseId)
+        
+        collectionView.delegate = self
     }
     
     private func reloadData() {
@@ -230,6 +232,20 @@ extension ListViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print(searchText)
+    }
+}
+
+extension ListViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let chat = self.dataSource?.itemIdentifier(for: indexPath) else { return }
+        guard let section = Section(rawValue: indexPath.section) else { return }
+        switch section {
+        case .waitingChats:
+            let chatQueryVC = ChatQueryViewController(chat: chat)
+            self.present(chatQueryVC, animated: true, completion: nil)
+        case .activeChats:
+            print(indexPath)
+        }
     }
 }
 
