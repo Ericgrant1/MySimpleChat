@@ -31,6 +31,8 @@ class ChatQueryViewController: UIViewController {
                               isShadow: false,
                               cornerRadius: 12)
     
+    weak var delegate: WaitingChatsNavigation?
+    
     private var chat: MyChat
     
     init(chat: MyChat) {
@@ -52,11 +54,28 @@ class ChatQueryViewController: UIViewController {
         view.backgroundColor = .mainWhite()
         customizeElements()
         configureUI()
+        
+        denyButton.addTarget(self, action: #selector(handleDenyButtonTapped), for: .touchUpInside)
+        acceptButton.addTarget(self, action: #selector(handleAcceptButtonTapped), for: .touchUpInside)
     }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         self.acceptButton.applyGradient(cornerRadius: 10)
+    }
+    
+    // MARK: - Selectors
+    
+    @objc private func handleDenyButtonTapped() {
+        self.dismiss(animated: true) {
+            self.delegate?.removeWaitingChat(chat: self.chat)
+        }
+    }
+    
+    @objc private func handleAcceptButtonTapped() {
+        self.dismiss(animated: true) {
+            self.delegate?.chatToActive(chat: self.chat)
+        }
     }
     
     // MARK: - Helpers

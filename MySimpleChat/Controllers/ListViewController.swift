@@ -68,6 +68,7 @@ class ListViewController: UIViewController {
             case .success(let chats):
                 if self.waitingChats != [], self.waitingChats.count <= chats.count {
                     let chatRequestVC = ChatQueryViewController(chat: chats.last!)
+                    chatRequestVC.delegate = self
                     self.present(chatRequestVC, animated: true, completion: nil)
                 }
                 self.waitingChats = chats
@@ -235,6 +236,8 @@ extension ListViewController: UISearchBarDelegate {
     }
 }
 
+// MARK: - UICollectionViewDelegate
+
 extension ListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let chat = self.dataSource?.itemIdentifier(for: indexPath) else { return }
@@ -242,10 +245,28 @@ extension ListViewController: UICollectionViewDelegate {
         switch section {
         case .waitingChats:
             let chatQueryVC = ChatQueryViewController(chat: chat)
+            chatQueryVC.delegate = self
             self.present(chatQueryVC, animated: true, completion: nil)
         case .activeChats:
             print(indexPath)
         }
+    }
+}
+
+extension ListViewController: WaitingChatsNavigation {
+    func removeWaitingChat(chat: MyChat) {
+        FirestoreService.shared.deleteWaitingChat(chat: chat) { (result) in
+            switch result {
+            case .success():
+                self.showAlert(with: "Successfully!", and: "Chat \(chat.friendUsername) has been deleted")
+            case .failure(let error):
+                self.showAlert(with: "Error!", and: error.localizedDescription)
+            }
+        }
+    }
+    
+    func chatToActive(chat: MyChat) {
+        print(#function)
     }
 }
 
