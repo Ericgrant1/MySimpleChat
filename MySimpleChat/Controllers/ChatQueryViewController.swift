@@ -31,6 +31,19 @@ class ChatQueryViewController: UIViewController {
                               isShadow: false,
                               cornerRadius: 12)
     
+    private var chat: MyChat
+    
+    init(chat: MyChat) {
+        self.chat = chat
+        nameLabel.text = chat.friendUsername
+        imageView.sd_setImage(with: URL(string: chat.friendImageStringURL), completed: nil)
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -116,21 +129,21 @@ extension ChatQueryViewController {
 
 // MARK: - SwiftUI
 
-struct ChatQueryViewControllerProvider: PreviewProvider {
-    
-    static var previews: some View {
-        ContainerView().edgesIgnoringSafeArea(.all)
-    }
-    
-    struct ContainerView: UIViewControllerRepresentable {
-        
-        let ChatQueryVC = ChatQueryViewController()
-        
-        func makeUIViewController(context: Context) -> ChatQueryViewController {
-            return ChatQueryVC
-        }
-        
-        func updateUIViewController(_ uiViewController: ChatQueryViewController, context: Context) {
-        }
-    }
-}
+//struct ChatQueryViewControllerProvider: PreviewProvider {
+//
+//    static var previews: some View {
+//        ContainerView().edgesIgnoringSafeArea(.all)
+//    }
+//
+//    struct ContainerView: UIViewControllerRepresentable {
+//
+//        let ChatQueryVC = ChatQueryViewController()
+//
+//        func makeUIViewController(context: Context) -> ChatQueryViewController {
+//            return ChatQueryVC
+//        }
+//
+//        func updateUIViewController(_ uiViewController: ChatQueryViewController, context: Context) {
+//        }
+//    }
+//}

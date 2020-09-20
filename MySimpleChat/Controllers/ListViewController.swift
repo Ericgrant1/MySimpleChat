@@ -66,6 +66,10 @@ class ListViewController: UIViewController {
         waitingChatsListener = ListenerService.shared.waitingChatsObserve(chats: waitingChats, completion: { (result) in
             switch result {
             case .success(let chats):
+                if self.waitingChats != [], self.waitingChats.count <= chats.count {
+                    let chatRequestVC = ChatQueryViewController(chat: chats.last!)
+                    self.present(chatRequestVC, animated: true, completion: nil)
+                }
                 self.waitingChats = chats
                 self.reloadData()
             case .failure(let error):
